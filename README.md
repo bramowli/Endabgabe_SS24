@@ -1,1 +1,1 @@
-"# Endabgabe_SS24" 
+# Endabgabe_SS24
