@@ -1,6 +1,18 @@
 "use strict";
 var Geistdiele;
 (function (Geistdiele) {
+    class Vector {
+        x;
+        y;
+        constructor(_x, _y) {
+            this.x = _x;
+            this.y = _y;
+        }
+    }
+    Geistdiele.Vector = Vector;
+})(Geistdiele || (Geistdiele = {}));
+var Geistdiele;
+(function (Geistdiele) {
     class Drawable {
         position;
         constructor(_position) {
@@ -24,14 +36,14 @@ var Geistdiele;
 var Geistdiele;
 (function (Geistdiele) {
     class Background extends Geistdiele.Drawable {
-        type;
-        constructor(_type, _position) {
+        constructor(_position) {
             super(_position);
-            this.type = _type;
         }
         draw() {
+            console.log("Background");
             Geistdiele.crc2.fillStyle = "grey";
             Geistdiele.crc2.rect(0, 0, Geistdiele.crc2.canvas.width, Geistdiele.crc2.canvas.height);
+            Geistdiele.crc2.fill();
         }
     }
     Geistdiele.Background = Background;
@@ -93,14 +105,16 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
-    window.addEventListener("load", handleLoad);
     Geistdiele.canvas = document.querySelector("canvas");
     Geistdiele.crc2 = Geistdiele.canvas.getContext("2d");
-    Geistdiele.canvas.addEventListener("click", handleClick);
-    function handleLoad() { }
-    ;
-    function handleClick(_event) {
+    start();
+    function start() {
+        window.addEventListener("load", handleLoad);
+        Geistdiele.canvas.addEventListener("click", handleClick);
     }
+    function handleLoad() { }
+    function handleClick(_event) { }
+    new Geistdiele.Background(new Geistdiele.Vector(0, 0)).draw();
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
@@ -136,17 +150,5 @@ var Geistdiele;
         draw() { }
     }
     Geistdiele.Topping = Topping;
-})(Geistdiele || (Geistdiele = {}));
-var Geistdiele;
-(function (Geistdiele) {
-    class Vector {
-        x;
-        y;
-        constructor(_x, _y) {
-            this.x = _x;
-            this.y = _y;
-        }
-    }
-    Geistdiele.Vector = Vector;
 })(Geistdiele || (Geistdiele = {}));
 //# sourceMappingURL=build.js.map
