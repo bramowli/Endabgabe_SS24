@@ -4,6 +4,7 @@ namespace Geistdiele {
       super(_type, _position);
     }
 
-    public draw(): void {}
+    public draw(): void {
+    }
   }
 }

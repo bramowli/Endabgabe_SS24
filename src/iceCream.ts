@@ -14,5 +14,7 @@ namespace Geistdiele {
         public draw(): void {
             // draw ice cream
         }
+
+        drawCone(): void {}
     }
 }
