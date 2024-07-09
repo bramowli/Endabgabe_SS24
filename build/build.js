@@ -44,14 +44,16 @@ var Geistdiele;
             super(_position);
         }
         draw() {
-            //this.drawSky(this.position);
             this.drawStoneStuff(this.position);
+            this.drawAllTables();
         }
-        drawSky(_position) {
-            console.log("draw sky");
-            Geistdiele.crc2.fillStyle = "#160045";
-            Geistdiele.crc2.rect(0, 0, Geistdiele.crc2.canvas.width, Geistdiele.crc2.canvas.height);
-            Geistdiele.crc2.fill();
+        //help
+        drawAllTables() {
+            let x = 200;
+            for (let i = 0; i <= 2; i++) {
+                this.drawTable(x, 450);
+                x += 600;
+            }
         }
         drawStoneStuff(_position) {
             console.log("draw stone");
@@ -3450,6 +3452,235 @@ var Geistdiele;
             Geistdiele.crc2.stroke();
             Geistdiele.crc2.restore();
         }
+        drawTable(_x, _y) {
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(_x, _y);
+            // #path1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(136.87, 63.1995);
+            Geistdiele.crc2.bezierCurveTo(136.87, 84.3699, 151.754, 164.133, 99.937, 165.204);
+            Geistdiele.crc2.bezierCurveTo(76.0823, 165.394, 66.702, 187.874, 66.702, 198.459);
+            Geistdiele.crc2.stroke();
+            // #path2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(163.907, 66.7761);
+            Geistdiele.crc2.bezierCurveTo(163.907, 82.5823, 145.147, 165.169, 198.532, 166.541);
+            Geistdiele.crc2.bezierCurveTo(219.618, 166.541, 234.949, 177.489, 234.949, 196.444);
+            Geistdiele.crc2.stroke();
+            // #path3
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(150.125, 65.3365);
+            Geistdiele.crc2.bezierCurveTo(150.544, 82.3023, 148.997, 169.948, 148.997, 177.489);
+            Geistdiele.crc2.stroke();
+            // #path4
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(139.402, 119.204);
+            Geistdiele.crc2.bezierCurveTo(148.919, 119.204, 160.064, 118.897, 160.064, 118.897);
+            Geistdiele.crc2.stroke();
+            // #Ebene-5-kopieren
+            // #path5
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(7.38854, 52.7385);
+            Geistdiele.crc2.bezierCurveTo(7.38854, 41.6447, 72.3716, 32.6515, 152.532, 32.6515);
+            Geistdiele.crc2.bezierCurveTo(232.693, 32.6515, 297.676, 41.6447, 297.676, 52.7385);
+            Geistdiele.crc2.bezierCurveTo(297.676, 63.8323, 232.693, 72.8256, 152.532, 72.8256);
+            Geistdiele.crc2.bezierCurveTo(72.3716, 72.8256, 7.38854, 63.8323, 7.38854, 52.7385);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path6
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(8.13914, 55.7018);
+            Geistdiele.crc2.bezierCurveTo(8.13914, 54.1274, 5.83142, 49.6773, 5.83142, 48.3238);
+            Geistdiele.crc2.stroke();
+            // #path7
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(297.676, 52.7385);
+            Geistdiele.crc2.lineTo(297.676, 47.8088);
+            Geistdiele.crc2.stroke();
+            // #Ebene-5
+            // #path8
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(32, 32, 32)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(32, 32, 32)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(5.83142, 47.8088);
+            Geistdiele.crc2.bezierCurveTo(5.83142, 36.7151, 71.1631, 27.7218, 151.754, 27.7218);
+            Geistdiele.crc2.bezierCurveTo(232.344, 27.7218, 297.676, 36.7151, 297.676, 47.8088);
+            Geistdiele.crc2.bezierCurveTo(297.676, 58.9026, 232.344, 67.8959, 151.754, 67.8959);
+            Geistdiele.crc2.bezierCurveTo(71.1631, 67.8959, 5.83142, 58.9026, 5.83142, 47.8088);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #Ebene-7
+            // #path9
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.620874;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(137.815, 28.9006);
+            Geistdiele.crc2.bezierCurveTo(137.815, 22.0333, 137.741, 12.2256, 147.277, 12.2256);
+            Geistdiele.crc2.bezierCurveTo(156.812, 12.2256, 156.739, 22.0333, 156.739, 28.9006);
+            Geistdiele.crc2.bezierCurveTo(156.739, 35.7678, 153.52, 47.05, 147.204, 47.05);
+            Geistdiele.crc2.bezierCurveTo(140.887, 47.05, 137.815, 35.7678, 137.815, 28.9006);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path10
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.594225;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(160.719, 33.0963);
+            Geistdiele.crc2.bezierCurveTo(160.719, 24.4286, 147.277, 13.6663, 152.532, 13.0525);
+            Geistdiele.crc2.bezierCurveTo(160.929, 13.0525, 171.065, 21.0654, 171.065, 30.6395);
+            Geistdiele.crc2.bezierCurveTo(171.065, 40.2135, 167.347, 47.5676, 163.711, 47.7435);
+            Geistdiele.crc2.bezierCurveTo(160.074, 47.9193, 160.719, 41.7639, 160.719, 33.0963);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path11
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.594225;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(150.584, 35.913);
+            Geistdiele.crc2.bezierCurveTo(150.584, 27.2453, 148.844, 17.3698, 152.74, 17.3698);
+            Geistdiele.crc2.bezierCurveTo(156.636, 17.3698, 163.929, 26.446, 163.929, 36.02);
+            Geistdiele.crc2.bezierCurveTo(163.929, 45.5941, 159.169, 50.3807, 155.532, 50.5565);
+            Geistdiele.crc2.bezierCurveTo(151.896, 50.7323, 150.584, 44.5806, 150.584, 35.913);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path12
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.568164;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(122.796, 30.6343);
+            Geistdiele.crc2.bezierCurveTo(122.796, 21.9666, 129.575, 13.0525, 140.519, 13.0525);
+            Geistdiele.crc2.bezierCurveTo(146.538, 13.2639, 135.654, 24.96, 135.654, 34.5341);
+            Geistdiele.crc2.bezierCurveTo(135.654, 44.1082, 136.404, 47.5687, 132.767, 47.7445);
+            Geistdiele.crc2.bezierCurveTo(129.131, 47.9203, 122.796, 39.3021, 122.796, 30.6343);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path13
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.568164;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(129.575, 33.4492);
+            Geistdiele.crc2.bezierCurveTo(129.575, 24.7815, 136.907, 16.5737, 140.803, 16.5737);
+            Geistdiele.crc2.bezierCurveTo(144.699, 16.5737, 144.565, 25.5393, 144.565, 35.1134);
+            Geistdiele.crc2.bezierCurveTo(144.565, 44.6875, 142.723, 49.5818, 139.086, 49.7576);
+            Geistdiele.crc2.bezierCurveTo(135.45, 49.9334, 129.575, 42.1169, 129.575, 33.4492);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path14
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(162, 79, 20)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.620874;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(137.815, 34.589);
+            Geistdiele.crc2.bezierCurveTo(137.815, 27.7218, 141.875, 18.7409, 147.204, 18.7409);
+            Geistdiele.crc2.bezierCurveTo(152.532, 18.7409, 156.739, 27.7218, 156.739, 34.589);
+            Geistdiele.crc2.bezierCurveTo(156.739, 41.4563, 154.908, 52.0128, 147.277, 52.0128);
+            Geistdiele.crc2.bezierCurveTo(139.645, 52.0128, 137.815, 41.4563, 137.815, 34.589);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #Ebene-8
+            // #path15
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(52, 74, 0)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(35, 49, 2)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.620874;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(144.964, 16.955);
+            Geistdiele.crc2.bezierCurveTo(144.964, 16.955, 149.733, 10.3808, 149.733, 3.80581);
+            Geistdiele.crc2.bezierCurveTo(149.733, 0.306864, 153.797, 3.80581, 155.591, 3.80581);
+            Geistdiele.crc2.bezierCurveTo(157.385, 3.80581, 148.997, 16.5737, 148.997, 16.5737);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
+        }
     }
     Geistdiele.Background = Background;
 })(Geistdiele || (Geistdiele = {}));
@@ -3515,13 +3746,334 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
-    class Door {
-        state = false;
-        constructor(_state) {
-            this.state = _state;
+    class Door extends Geistdiele.Drawable {
+        open = false;
+        constructor(_position, _open) {
+            super(_position);
+            this.open = _open;
         }
-        draw() { }
-        changeState() { }
+        draw() {
+            if (this.open === true) {
+                this.drawOpenDoor(this.position);
+            }
+            else {
+                this.drawClosedDoor(this.position);
+            }
+        }
+        openDoor(_open) {
+            this.open = _open;
+        }
+        isOpened() {
+            return this.open;
+        }
+        drawOpenDoor(_position) {
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(this.position.x, this.position.y);
+            // #Ebene-10-0
+            Geistdiele.crc2.save();
+            // #path1-8
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(91.4509, 52.448);
+            Geistdiele.crc2.bezierCurveTo(91.4509, 45.1997, 75.5628, 25.6647, 49.0945, 25.6647);
+            Geistdiele.crc2.bezierCurveTo(22.6262, 25.6647, 0.0, 10.8679, 0.0, 1.13315);
+            Geistdiele.crc2.bezierCurveTo(0.0, -1.60545, 0.072616, 8.34435, 0.17699, 24.0602);
+            Geistdiele.crc2.bezierCurveTo(0.443627, 64.2084, 0.917525, 141.987, 0.917525, 141.987);
+            Geistdiele.crc2.lineTo(94.4328, 142.184);
+            Geistdiele.crc2.bezierCurveTo(94.4328, 142.184, 91.4509, 59.6963, 91.4509, 52.448);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.stroke();
+            // #path2-1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(277.04, 51.7673);
+            Geistdiele.crc2.bezierCurveTo(277.04, 44.519, 292.928, 24.984, 319.396, 24.984);
+            Geistdiele.crc2.bezierCurveTo(345.864, 24.984, 368.491, 10.1872, 368.491, 0.452425);
+            Geistdiele.crc2.bezierCurveTo(368.491, -2.28618, 368.418, 7.66363, 368.314, 23.3795);
+            Geistdiele.crc2.bezierCurveTo(368.047, 63.5277, 367.573, 141.306, 367.573, 141.306);
+            Geistdiele.crc2.lineTo(274.058, 141.503);
+            Geistdiele.crc2.bezierCurveTo(274.058, 141.503, 277.04, 59.0155, 277.04, 51.7673);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.stroke();
+            // #path3-2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(92.4919, 86.8728);
+            Geistdiele.crc2.bezierCurveTo(92.4919, 73.7853, 69.3918, 47.5218, 47.2164, 47.5218);
+            Geistdiele.crc2.bezierCurveTo(25.041, 47.5218, 0.195023, 37.6718, 0.195023, 24.064);
+            Geistdiele.crc2.stroke();
+            // #path4-2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(275.999, 86.192);
+            Geistdiele.crc2.bezierCurveTo(275.999, 73.1046, 299.099, 46.8411, 321.274, 46.8411);
+            Geistdiele.crc2.bezierCurveTo(343.449, 46.8411, 368.296, 36.9911, 368.296, 23.3832);
+            Geistdiele.crc2.stroke();
+            // #path5-3
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(22.2945, 24.064);
+            Geistdiele.crc2.lineTo(21.914, 137.902);
+            Geistdiele.crc2.stroke();
+            // #path6-7
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(346.196, 23.3832);
+            Geistdiele.crc2.lineTo(346.577, 137.221);
+            Geistdiele.crc2.stroke();
+            // #path7-5
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(38.2943, 27.5927);
+            Geistdiele.crc2.lineTo(37.7476, 138.826);
+            Geistdiele.crc2.stroke();
+            // #path8-3
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(330.196, 26.9119);
+            Geistdiele.crc2.lineTo(330.743, 138.145);
+            Geistdiele.crc2.stroke();
+            // #path9-4
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(55.604, 30.3143);
+            Geistdiele.crc2.lineTo(55.0573, 141.548);
+            Geistdiele.crc2.stroke();
+            // #path10-1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(312.887, 29.6335);
+            Geistdiele.crc2.lineTo(313.433, 140.867);
+            Geistdiele.crc2.stroke();
+            // #path11-2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(72.5188, 30.2696);
+            Geistdiele.crc2.lineTo(71.9721, 141.503);
+            Geistdiele.crc2.stroke();
+            // #path12-8
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(295.972, 29.5889);
+            Geistdiele.crc2.lineTo(296.518, 140.822);
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
+            Geistdiele.crc2.restore();
+        }
+        drawClosedDoor(_position) {
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(this.position.x, this.position.y);
+            // #Ebene-10
+            Geistdiele.crc2.save();
+            // #path1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(185.689, 51.8003);
+            Geistdiele.crc2.bezierCurveTo(185.689, 44.552, 169.801, 25.017, 143.332, 25.017);
+            Geistdiele.crc2.bezierCurveTo(116.864, 25.017, 94.2378, 10.2202, 94.2378, 0.485425);
+            Geistdiele.crc2.bezierCurveTo(94.2378, -2.25318, 94.3104, 7.69663, 94.4148, 23.4125);
+            Geistdiele.crc2.bezierCurveTo(94.6814, 63.5607, 95.1553, 141.339, 95.1553, 141.339);
+            Geistdiele.crc2.lineTo(188.671, 141.536);
+            Geistdiele.crc2.bezierCurveTo(188.671, 141.536, 185.689, 59.0485, 185.689, 51.8003);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.stroke();
+            // #path2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5; //2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(2.98192, 51.7673);
+            Geistdiele.crc2.bezierCurveTo(2.98192, 44.519, 18.87, 24.984, 45.3383, 24.984);
+            Geistdiele.crc2.bezierCurveTo(71.8066, 24.984, 94.4328, 10.1872, 94.4328, 0.452425);
+            Geistdiele.crc2.bezierCurveTo(94.4328, -2.28618, 94.3602, 7.66363, 94.2558, 23.3795);
+            Geistdiele.crc2.bezierCurveTo(93.9892, 63.5277, 93.5153, 141.306, 93.5153, 141.306);
+            Geistdiele.crc2.lineTo(0.0, 141.503);
+            Geistdiele.crc2.bezierCurveTo(0.0, 141.503, 2.98192, 59.0155, 2.98192, 51.7673);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.stroke();
+            // #path3
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(186.73, 86.225);
+            Geistdiele.crc2.bezierCurveTo(186.73, 73.1376, 163.63, 46.8741, 141.454, 46.8741);
+            Geistdiele.crc2.bezierCurveTo(119.279, 46.8741, 94.4328, 37.0241, 94.4328, 23.4162);
+            Geistdiele.crc2.stroke();
+            // #path4
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(1.94089, 86.192);
+            Geistdiele.crc2.bezierCurveTo(1.94089, 73.1046, 25.041, 46.8411, 47.2164, 46.8411);
+            Geistdiele.crc2.bezierCurveTo(69.3918, 46.8411, 94.2378, 36.9911, 94.2378, 23.3832);
+            Geistdiele.crc2.stroke();
+            // #path5
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(116.532, 23.4162);
+            Geistdiele.crc2.lineTo(116.152, 137.254);
+            Geistdiele.crc2.stroke();
+            // #path6
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(72.1383, 23.3832);
+            Geistdiele.crc2.lineTo(72.5188, 137.221);
+            Geistdiele.crc2.stroke();
+            // #path7
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(132.532, 26.9449);
+            Geistdiele.crc2.lineTo(131.985, 138.178);
+            Geistdiele.crc2.stroke();
+            // #path8
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(56.1385, 26.9119);
+            Geistdiele.crc2.lineTo(56.6852, 138.145);
+            Geistdiele.crc2.stroke();
+            // #path9
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(149.842, 29.6665);
+            Geistdiele.crc2.lineTo(149.295, 140.9);
+            Geistdiele.crc2.stroke();
+            // #path10
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(38.8288, 29.6335);
+            Geistdiele.crc2.lineTo(39.3755, 140.867);
+            Geistdiele.crc2.stroke();
+            // #path11
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(166.757, 29.6219);
+            Geistdiele.crc2.lineTo(166.21, 140.855);
+            Geistdiele.crc2.stroke();
+            // #path12
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 1.127099;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(21.914, 29.5889);
+            Geistdiele.crc2.lineTo(22.4607, 140.822);
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
+            Geistdiele.crc2.restore();
+        }
     }
     Geistdiele.Door = Door;
 })(Geistdiele || (Geistdiele = {}));
@@ -3546,10 +4098,102 @@ var Geistdiele;
             super(_position);
             this.emotion = _emotion;
         }
-        draw() { }
+        draw() {
+            this.drawGhost(this.position);
+            this.drawMouth();
+        }
         move() { }
         order() { }
         changeEmotion() { }
+        interact(_hitPosition) {
+            if (_hitPosition.x >= this.position.x - 57 &&
+                _hitPosition.x <= this.position.x &&
+                _hitPosition.y >= this.position.y - 18 &&
+                _hitPosition.y <= this.position.y + 12) {
+                return true;
+            }
+            return false;
+        }
+        drawMouth() {
+            console.log("uff");
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(0, 0);
+            Geistdiele.crc2.strokeStyle = "black";
+            if (this.emotion === "happy") {
+                Geistdiele.crc2.beginPath();
+                Geistdiele.crc2.moveTo(0, 0);
+                Geistdiele.crc2.bezierCurveTo(0, 5, 15, 5, 15, 0);
+            }
+            else if (this.emotion === "neutral") {
+            }
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
+        }
+        drawGhost(_position /*this.position.x, this.position.y * Math.random()*10*/) {
+            //?
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(_position.x, _position.y);
+            // #path1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(255, 255, 255)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(255, 255, 255)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(46.8841, 10.4826);
+            Geistdiele.crc2.bezierCurveTo(103.109, 9.31676, 94.5616, 137.767, 94.5616, 145.635);
+            Geistdiele.crc2.bezierCurveTo(94.5616, 153.502, 99.531, 196.786, 90.2298, 196.786);
+            Geistdiele.crc2.bezierCurveTo(80.9287, 196.786, 75.7487, 180.062, 75.7487, 180.062);
+            Geistdiele.crc2.bezierCurveTo(75.7487, 180.062, 72.6302, 198.011, 66.8104, 198.011);
+            Geistdiele.crc2.bezierCurveTo(60.9905, 198.011, 53.8097, 180.062, 53.8097, 180.062);
+            Geistdiele.crc2.bezierCurveTo(53.8097, 180.062, 48.2086, 198.824, 41.7906, 198.824);
+            Geistdiele.crc2.bezierCurveTo(35.3725, 198.824, 34.5039, 180.893, 34.5039, 180.893);
+            Geistdiele.crc2.bezierCurveTo(34.5039, 180.893, 29.0742, 198.042, 20.8934, 198.042);
+            Geistdiele.crc2.bezierCurveTo(12.7126, 198.042, 11.2921, 162.499, 11.2921, 150.767);
+            Geistdiele.crc2.bezierCurveTo(11.2921, 139.035, -9.34116, 11.6484, 46.8841, 10.4826);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #Ebene-3
+            // #path2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(23.6277, 59.2573);
+            Geistdiele.crc2.bezierCurveTo(23.6277, 54.2159, 25.7405, 45.3242, 28.9898, 45.1974);
+            Geistdiele.crc2.bezierCurveTo(32.239, 45.0706, 34.3518, 54.2159, 34.3518, 59.2573);
+            Geistdiele.crc2.bezierCurveTo(34.3518, 64.2987, 33.0434, 75.2567, 29.0925, 75.0639);
+            Geistdiele.crc2.bezierCurveTo(25.1416, 74.871, 23.6277, 64.2987, 23.6277, 59.2573);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path3
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(65.2387, 57.0901);
+            Geistdiele.crc2.bezierCurveTo(65.2387, 52.0487, 67.3515, 43.157, 70.6007, 43.0302);
+            Geistdiele.crc2.bezierCurveTo(73.85, 42.9034, 75.9628, 52.0487, 75.9628, 57.0901);
+            Geistdiele.crc2.bezierCurveTo(75.9628, 62.1315, 74.6544, 73.0895, 70.7035, 72.8966);
+            Geistdiele.crc2.bezierCurveTo(66.7526, 72.7038, 65.2387, 62.1315, 65.2387, 57.0901);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
+        }
     }
     Geistdiele.Ghost = Ghost;
 })(Geistdiele || (Geistdiele = {}));
@@ -3577,13 +4221,59 @@ var Geistdiele;
     Geistdiele.canvas = document.querySelector("canvas");
     Geistdiele.crc2 = Geistdiele.canvas.getContext("2d");
     const bg = new Geistdiele.Background(new Geistdiele.Vector(0, 0));
+    let seats = [];
+    const door = new Geistdiele.Door({ x: 137, y: 270 }, false);
+    let ghostsBehindWall = [];
+    let ghostsInfrontOfWall = [];
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         Geistdiele.canvas.addEventListener("click", handleClick);
-        bg.draw();
+        new Audio("assets/music.mp3").play(); //not playing?
+        addSeats();
+        addWaitingGhosts();
+        addSittingGhosts();
+        setInterval(loop, 40);
     }
     function handleClick(_event) {
         let hit = { x: _event.offsetX, y: _event.offsetY };
+    }
+    function addSeats() {
+        seats.push(new Geistdiele.Seat({ x: 200, y: 450 }, true, false, 1));
+        seats.push(new Geistdiele.Seat({ x: 500, y: 450 }, true, true, 1));
+        seats.push(new Geistdiele.Seat({ x: 800, y: 450 }, true, false, 1));
+        seats.push(new Geistdiele.Seat({ x: 1100, y: 450 }, true, true, 1));
+        seats.push(new Geistdiele.Seat({ x: 1400, y: 450 }, true, false, 1));
+        seats.push(new Geistdiele.Seat({ x: 1700, y: 450 }, true, true, 1));
+    }
+    function addWaitingGhosts() {
+        ghostsBehindWall.push(new Geistdiele.Ghost({ x: 300, y: 200 }, "happy"));
+    }
+    function addSittingGhosts() {
+        ghostsInfrontOfWall.push(new Geistdiele.Ghost({ x: 100, y: 400 }, "happy"));
+    }
+    function loop() {
+        drawSky();
+        for (let i = 0; i < ghostsBehindWall.length; i++) {
+            ghostsBehindWall[i].draw();
+        }
+        bg.draw();
+        for (let i = 0; i < seats.length; i++) {
+            seats[i].draw();
+        }
+        door.draw();
+        for (let i = 0; i < ghostsInfrontOfWall.length; i++) {
+            ghostsInfrontOfWall[i].draw();
+        }
+        const freeSeat = seats.find((Seat) => Seat.isFree());
+        if (freeSeat) {
+            //ghost sits on that chair
+        }
+    }
+    function drawSky() {
+        console.log("draw sky");
+        Geistdiele.crc2.fillStyle = "#162032";
+        Geistdiele.crc2.rect(0, 0, Geistdiele.crc2.canvas.width, Geistdiele.crc2.canvas.height);
+        Geistdiele.crc2.fill();
     }
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
@@ -3600,20 +4290,177 @@ var Geistdiele;
 var Geistdiele;
 (function (Geistdiele) {
     class Seat extends Geistdiele.Drawable {
-        free = false;
+        free = true;
         mirror = false;
-        constructor(_position, _free, _mirror) {
+        size;
+        constructor(_position, _free, _mirror, _size) {
             super(_position);
             this.free = _free;
+            this.mirror = _mirror;
+            this.size = _size;
         }
         draw() {
-            // draw seat
+            this.drawSeat();
         }
         setFree(_free) {
             this.free = _free;
         }
         isFree() {
             return this.free;
+        }
+        drawSeat() {
+            Geistdiele.crc2.save();
+            Geistdiele.crc2.translate(this.position.x, this.position.y);
+            if (this.mirror == false) {
+                Geistdiele.crc2.scale(-this.size, this.size); //why no work?
+            }
+            else {
+                Geistdiele.crc2.scale(this.size, this.size);
+            }
+            // #path1-7
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(96.705, 143.448);
+            Geistdiele.crc2.bezierCurveTo(96.705, 152.165, 89.5637, 203.524, 100.574, 203.524);
+            Geistdiele.crc2.stroke();
+            // #path2-5
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(80.8366, 146.508);
+            Geistdiele.crc2.bezierCurveTo(80.8366, 166.96, 70.9929, 216.159, 86.0289, 216.159);
+            Geistdiele.crc2.stroke();
+            // #path3-7
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(47.2991, 137.85);
+            Geistdiele.crc2.bezierCurveTo(47.2991, 162.509, 47.288, 203.119, 36.2164, 203.119);
+            Geistdiele.crc2.stroke();
+            // #path4-6
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "round";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(20.5934, 145.324);
+            Geistdiele.crc2.bezierCurveTo(20.5934, 169.984, 19.2905, 216.159, 8.21895, 216.159);
+            Geistdiele.crc2.stroke();
+            // #path5-8
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(9.75465, 140.01);
+            Geistdiele.crc2.bezierCurveTo(9.75465, 135.228, 30.8605, 131.352, 56.8959, 131.352);
+            Geistdiele.crc2.bezierCurveTo(82.9312, 131.352, 104.037, 135.228, 104.037, 140.01);
+            Geistdiele.crc2.bezierCurveTo(104.037, 144.791, 82.9312, 148.668, 56.8959, 148.668);
+            Geistdiele.crc2.bezierCurveTo(30.8605, 148.668, 9.75465, 144.791, 9.75465, 140.01);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            // #path6-2
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(51.5927, 132.032);
+            Geistdiele.crc2.bezierCurveTo(53.2427, 122.023, 58.6139, 112.521, 56.8186, 80.7449);
+            Geistdiele.crc2.bezierCurveTo(55.0214, 48.935, 36.3284, 20.5382, 56.8186, 20.5382);
+            Geistdiele.crc2.bezierCurveTo(70.0709, 20.5382, 73.4717, 30.5941, 76.7447, 30.5941);
+            Geistdiele.crc2.bezierCurveTo(80.0177, 30.5941, 74.0317, 11.3041, 96.9141, 8.92644);
+            Geistdiele.crc2.bezierCurveTo(119.796, 6.54874, 116.594, 27.7833, 121.016, 27.7833);
+            Geistdiele.crc2.bezierCurveTo(125.437, 27.7833, 121.016, 16.81, 132.129, 16.81);
+            Geistdiele.crc2.bezierCurveTo(143.242, 16.81, 144.715, 41.3442, 134.978, 58.8006);
+            Geistdiele.crc2.bezierCurveTo(125.24, 76.2571, 101.707, 120.199, 99.6383, 138.641);
+            Geistdiele.crc2.bezierCurveTo(99.6383, 141.205, 82.0267, 133.75, 85.1919, 133.75);
+            Geistdiele.crc2.bezierCurveTo(90.0005, 133.75, 93.5268, 119.258, 99.7227, 102.977);
+            Geistdiele.crc2.bezierCurveTo(104.22, 91.159, 118.55, 65.072, 120.742, 54.0664);
+            Geistdiele.crc2.bezierCurveTo(124.238, 36.5097, 121.224, 30.8324, 121.224, 26.2674);
+            Geistdiele.crc2.stroke();
+            // #path7-1
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 5;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(76.4099, 29.9129);
+            Geistdiele.crc2.bezierCurveTo(76.4099, 34.7871, 79.5078, 42.5933, 79.0923, 50.0737);
+            Geistdiele.crc2.bezierCurveTo(78.5926, 59.0713, 72.5931, 90.2201, 71.0713, 95.9034);
+            Geistdiele.crc2.bezierCurveTo(68.2844, 106.312, 63.1826, 128.88, 60.7102, 131.352);
+            Geistdiele.crc2.stroke();
+            // #path8-4
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 3;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(52.325, 54.137);
+            Geistdiele.crc2.bezierCurveTo(52.325, 46.0295, 73.0124, 42.6102, 77.6722, 51.2841);
+            Geistdiele.crc2.bezierCurveTo(79.2176, 54.1607, 86.8672, 43.9005, 97.8961, 43.9005);
+            Geistdiele.crc2.bezierCurveTo(108.925, 43.9005, 120.742, 57.2999, 120.742, 57.2999);
+            Geistdiele.crc2.bezierCurveTo(120.742, 57.2999, 124.297, 54.7603, 128.275, 53.9928);
+            Geistdiele.crc2.bezierCurveTo(131.316, 53.4063, 133.992, 57.0744, 133.992, 60.4257);
+            Geistdiele.crc2.stroke();
+            // #path9-0
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 3;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(55.8599, 71.2564);
+            Geistdiele.crc2.bezierCurveTo(55.8599, 63.1489, 75.8863, 64.4264, 75.8863, 70.9619);
+            Geistdiele.crc2.bezierCurveTo(75.8863, 74.2273, 83.518, 63.1037, 94.5469, 63.1037);
+            Geistdiele.crc2.bezierCurveTo(105.576, 63.1037, 111.903, 75.4501, 111.903, 75.4501);
+            Geistdiele.crc2.bezierCurveTo(111.903, 75.4501, 116.763, 71.471, 120.742, 70.7035);
+            Geistdiele.crc2.bezierCurveTo(123.782, 70.117, 126.197, 72.0161, 126.197, 75.3674);
+            Geistdiele.crc2.stroke();
+            // #path10-6
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.fillStyle = "rgb(32, 32, 32)";
+            Geistdiele.crc2.globalAlpha = 1.0;
+            Geistdiele.crc2.strokeStyle = "rgb(32, 32, 32)";
+            Geistdiele.crc2.lineCap = "butt";
+            Geistdiele.crc2.lineJoin = "round";
+            Geistdiele.crc2.lineWidth = 0.620874;
+            Geistdiele.crc2.miterLimit = 10;
+            Geistdiele.crc2.moveTo(9.75465, 137.85);
+            Geistdiele.crc2.bezierCurveTo(9.75465, 133.069, 30.8605, 129.192, 56.8959, 129.192);
+            Geistdiele.crc2.bezierCurveTo(82.9312, 129.192, 104.037, 133.069, 104.037, 137.85);
+            Geistdiele.crc2.bezierCurveTo(104.037, 142.632, 82.9312, 146.508, 56.8959, 146.508);
+            Geistdiele.crc2.bezierCurveTo(30.8605, 146.508, 9.75465, 142.632, 9.75465, 137.85);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.stroke();
+            Geistdiele.crc2.restore();
         }
     }
     Geistdiele.Seat = Seat;

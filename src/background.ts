@@ -5,15 +5,18 @@ namespace Geistdiele {
     }
 
     public draw(): void {
-      //this.drawSky(this.position);
       this.drawStoneStuff(this.position);
+      this.drawAllTables();
     }
 
-    drawSky(_position: Vector): void {
-      console.log("draw sky");
-      crc2.fillStyle = "#160045";
-      crc2.rect(0, 0, crc2.canvas.width, crc2.canvas.height);
-      crc2.fill();
+    //help
+    drawAllTables() {
+      let x: number = 200;
+
+      for (let i = 0; i <= 2; i++) {
+        this.drawTable(x, 450);
+        x += 600;
+      }
     }
 
     drawStoneStuff(_position: Vector): void {
@@ -3622,6 +3625,255 @@ namespace Geistdiele {
       crc2.lineTo(1998.61, 1118.33);
       crc2.lineTo(-40.6685, 1118.33);
       crc2.lineTo(-40.6685, 792.964);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+      crc2.restore();
+    }
+
+    private drawTable(_x: number, _y: number) {
+      crc2.save();
+      crc2.translate(_x, _y);
+
+      // #path1
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 5;
+      crc2.miterLimit = 10;
+      crc2.moveTo(136.87, 63.1995);
+      crc2.bezierCurveTo(136.87, 84.3699, 151.754, 164.133, 99.937, 165.204);
+      crc2.bezierCurveTo(76.0823, 165.394, 66.702, 187.874, 66.702, 198.459);
+      crc2.stroke();
+
+      // #path2
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 5;
+      crc2.miterLimit = 10;
+      crc2.moveTo(163.907, 66.7761);
+      crc2.bezierCurveTo(163.907, 82.5823, 145.147, 165.169, 198.532, 166.541);
+      crc2.bezierCurveTo(219.618, 166.541, 234.949, 177.489, 234.949, 196.444);
+      crc2.stroke();
+
+      // #path3
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 5;
+      crc2.miterLimit = 10;
+      crc2.moveTo(150.125, 65.3365);
+      crc2.bezierCurveTo(150.544, 82.3023, 148.997, 169.948, 148.997, 177.489);
+      crc2.stroke();
+
+      // #path4
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 5;
+      crc2.miterLimit = 10;
+      crc2.moveTo(139.402, 119.204);
+      crc2.bezierCurveTo(148.919, 119.204, 160.064, 118.897, 160.064, 118.897);
+      crc2.stroke();
+
+      // #Ebene-5-kopieren
+
+      // #path5
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(0, 0, 0)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 2.645833;
+      crc2.miterLimit = 10;
+      crc2.moveTo(7.38854, 52.7385);
+      crc2.bezierCurveTo(7.38854, 41.6447, 72.3716, 32.6515, 152.532, 32.6515);
+      crc2.bezierCurveTo(232.693, 32.6515, 297.676, 41.6447, 297.676, 52.7385);
+      crc2.bezierCurveTo(297.676, 63.8323, 232.693, 72.8256, 152.532, 72.8256);
+      crc2.bezierCurveTo(72.3716, 72.8256, 7.38854, 63.8323, 7.38854, 52.7385);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path6
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 2.645833;
+      crc2.miterLimit = 10;
+      crc2.moveTo(8.13914, 55.7018);
+      crc2.bezierCurveTo(8.13914, 54.1274, 5.83142, 49.6773, 5.83142, 48.3238);
+      crc2.stroke();
+
+      // #path7
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 2.645833;
+      crc2.miterLimit = 10;
+      crc2.moveTo(297.676, 52.7385);
+      crc2.lineTo(297.676, 47.8088);
+      crc2.stroke();
+
+      // #Ebene-5
+
+      // #path8
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(32, 32, 32)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(32, 32, 32)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 2.645833;
+      crc2.miterLimit = 10;
+      crc2.moveTo(5.83142, 47.8088);
+      crc2.bezierCurveTo(5.83142, 36.7151, 71.1631, 27.7218, 151.754, 27.7218);
+      crc2.bezierCurveTo(232.344, 27.7218, 297.676, 36.7151, 297.676, 47.8088);
+      crc2.bezierCurveTo(297.676, 58.9026, 232.344, 67.8959, 151.754, 67.8959);
+      crc2.bezierCurveTo(71.1631, 67.8959, 5.83142, 58.9026, 5.83142, 47.8088);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #Ebene-7
+
+      // #path9
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.620874;
+      crc2.miterLimit = 10;
+      crc2.moveTo(137.815, 28.9006);
+      crc2.bezierCurveTo(137.815, 22.0333, 137.741, 12.2256, 147.277, 12.2256);
+      crc2.bezierCurveTo(156.812, 12.2256, 156.739, 22.0333, 156.739, 28.9006);
+      crc2.bezierCurveTo(156.739, 35.7678, 153.52, 47.05, 147.204, 47.05);
+      crc2.bezierCurveTo(140.887, 47.05, 137.815, 35.7678, 137.815, 28.9006);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path10
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.594225;
+      crc2.miterLimit = 10;
+      crc2.moveTo(160.719, 33.0963);
+      crc2.bezierCurveTo(160.719, 24.4286, 147.277, 13.6663, 152.532, 13.0525);
+      crc2.bezierCurveTo(160.929, 13.0525, 171.065, 21.0654, 171.065, 30.6395);
+      crc2.bezierCurveTo(171.065, 40.2135, 167.347, 47.5676, 163.711, 47.7435);
+      crc2.bezierCurveTo(160.074, 47.9193, 160.719, 41.7639, 160.719, 33.0963);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path11
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.594225;
+      crc2.miterLimit = 10;
+      crc2.moveTo(150.584, 35.913);
+      crc2.bezierCurveTo(150.584, 27.2453, 148.844, 17.3698, 152.74, 17.3698);
+      crc2.bezierCurveTo(156.636, 17.3698, 163.929, 26.446, 163.929, 36.02);
+      crc2.bezierCurveTo(163.929, 45.5941, 159.169, 50.3807, 155.532, 50.5565);
+      crc2.bezierCurveTo(151.896, 50.7323, 150.584, 44.5806, 150.584, 35.913);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path12
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.568164;
+      crc2.miterLimit = 10;
+      crc2.moveTo(122.796, 30.6343);
+      crc2.bezierCurveTo(122.796, 21.9666, 129.575, 13.0525, 140.519, 13.0525);
+      crc2.bezierCurveTo(146.538, 13.2639, 135.654, 24.96, 135.654, 34.5341);
+      crc2.bezierCurveTo(135.654, 44.1082, 136.404, 47.5687, 132.767, 47.7445);
+      crc2.bezierCurveTo(129.131, 47.9203, 122.796, 39.3021, 122.796, 30.6343);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path13
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.568164;
+      crc2.miterLimit = 10;
+      crc2.moveTo(129.575, 33.4492);
+      crc2.bezierCurveTo(129.575, 24.7815, 136.907, 16.5737, 140.803, 16.5737);
+      crc2.bezierCurveTo(144.699, 16.5737, 144.565, 25.5393, 144.565, 35.1134);
+      crc2.bezierCurveTo(144.565, 44.6875, 142.723, 49.5818, 139.086, 49.7576);
+      crc2.bezierCurveTo(135.45, 49.9334, 129.575, 42.1169, 129.575, 33.4492);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path14
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(184, 93, 29)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(162, 79, 20)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.620874;
+      crc2.miterLimit = 10;
+      crc2.moveTo(137.815, 34.589);
+      crc2.bezierCurveTo(137.815, 27.7218, 141.875, 18.7409, 147.204, 18.7409);
+      crc2.bezierCurveTo(152.532, 18.7409, 156.739, 27.7218, 156.739, 34.589);
+      crc2.bezierCurveTo(156.739, 41.4563, 154.908, 52.0128, 147.277, 52.0128);
+      crc2.bezierCurveTo(139.645, 52.0128, 137.815, 41.4563, 137.815, 34.589);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #Ebene-8
+
+      // #path15
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(52, 74, 0)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(35, 49, 2)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 0.620874;
+      crc2.miterLimit = 10;
+      crc2.moveTo(144.964, 16.955);
+      crc2.bezierCurveTo(144.964, 16.955, 149.733, 10.3808, 149.733, 3.80581);
+      crc2.bezierCurveTo(149.733, 0.306864, 153.797, 3.80581, 155.591, 3.80581);
+      crc2.bezierCurveTo(157.385, 3.80581, 148.997, 16.5737, 148.997, 16.5737);
       crc2.closePath();
       crc2.fill();
       crc2.stroke();
