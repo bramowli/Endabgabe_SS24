@@ -1,28 +1,33 @@
 namespace Geistdiele {
   export class Door extends Drawable {
-    open: boolean = false;
+    isOpen: boolean = false;
 
     constructor(_position: Vector, _open: boolean) {
       super(_position);
-      this.open = _open;
+      this.isOpen = _open;
     }
 
     public draw(): void {
-      if (this.open === true) {
+      if (this.isOpen === true) {
         this.drawOpenDoor(this.position);
       } else {
         this.drawClosedDoor(this.position);
       }
     }
 
-    private openDoor(_open: boolean): void {
-      this.open = _open;
-    }
-    public isOpened(): boolean {
-      return this.open;
+    public open(): void {
+      this.isOpen = true;
     }
 
-    drawOpenDoor(_position: Vector) {
+    public close(): void {
+      this.isOpen = false;
+    }
+
+    public isOpened(): boolean {
+      return this.isOpen;
+    }
+
+    private drawOpenDoor(_position: Vector) {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
 
@@ -190,7 +195,7 @@ namespace Geistdiele {
       crc2.restore();
     }
 
-    drawClosedDoor(_position: Vector) {
+    private drawClosedDoor(_position: Vector) {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
 
@@ -221,7 +226,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 5//2.645833;
+      crc2.lineWidth = 5; //2.645833;
       crc2.miterLimit = 10;
       crc2.moveTo(2.98192, 51.7673);
       crc2.bezierCurveTo(2.98192, 44.519, 18.87, 24.984, 45.3383, 24.984);

@@ -56,7 +56,6 @@ var Geistdiele;
             }
         }
         drawStoneStuff(_position) {
-            console.log("draw stone");
             // #Ebene-1
             Geistdiele.crc2.save();
             // #path1
@@ -3747,24 +3746,27 @@ var Geistdiele;
 var Geistdiele;
 (function (Geistdiele) {
     class Door extends Geistdiele.Drawable {
-        open = false;
+        isOpen = false;
         constructor(_position, _open) {
             super(_position);
-            this.open = _open;
+            this.isOpen = _open;
         }
         draw() {
-            if (this.open === true) {
+            if (this.isOpen === true) {
                 this.drawOpenDoor(this.position);
             }
             else {
                 this.drawClosedDoor(this.position);
             }
         }
-        openDoor(_open) {
-            this.open = _open;
+        open() {
+            this.isOpen = true;
+        }
+        close() {
+            this.isOpen = false;
         }
         isOpened() {
-            return this.open;
+            return this.isOpen;
         }
         drawOpenDoor(_position) {
             Geistdiele.crc2.save();
@@ -4099,25 +4101,30 @@ var Geistdiele;
             this.emotion = _emotion;
         }
         draw() {
-            this.drawGhost(this.position);
+            //console.log(`Drawing ghost at position: (${this.position.x}, ${this.position.y})`);
+            this.drawGhost();
             this.drawMouth();
         }
         move() { }
         order() { }
         changeEmotion() { }
         interact(_hitPosition) {
+            //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
+            //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
             if (_hitPosition.x >= this.position.x - 57 &&
-                _hitPosition.x <= this.position.x &&
+                _hitPosition.x <= this.position.x + 50 &&
                 _hitPosition.y >= this.position.y - 18 &&
                 _hitPosition.y <= this.position.y + 12) {
+                console.log("hit"); //not working?
                 return true;
             }
             return false;
         }
         drawMouth() {
-            console.log("uff");
+            //no mouth?
+            //console.log("uff")
             Geistdiele.crc2.save();
-            Geistdiele.crc2.translate(0, 0);
+            Geistdiele.crc2.translate(this.position.x, this.position.y);
             Geistdiele.crc2.strokeStyle = "black";
             if (this.emotion === "happy") {
                 Geistdiele.crc2.beginPath();
@@ -4130,10 +4137,11 @@ var Geistdiele;
             Geistdiele.crc2.stroke();
             Geistdiele.crc2.restore();
         }
-        drawGhost(_position /*this.position.x, this.position.y * Math.random()*10*/) {
+        drawGhost() {
             //?
             Geistdiele.crc2.save();
-            Geistdiele.crc2.translate(_position.x, _position.y);
+            /*this.position.x, this.position.y * Math.random()*10*/
+            Geistdiele.crc2.translate(this.position.x, this.position.y);
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(255, 255, 255)";
@@ -4165,7 +4173,7 @@ var Geistdiele;
             Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
             Geistdiele.crc2.lineCap = "butt";
             Geistdiele.crc2.lineJoin = "round";
-            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.lineWidth = 5;
             Geistdiele.crc2.miterLimit = 10;
             Geistdiele.crc2.moveTo(23.6277, 59.2573);
             Geistdiele.crc2.bezierCurveTo(23.6277, 54.2159, 25.7405, 45.3242, 28.9898, 45.1974);
@@ -4182,7 +4190,7 @@ var Geistdiele;
             Geistdiele.crc2.strokeStyle = "rgb(0, 0, 0)";
             Geistdiele.crc2.lineCap = "butt";
             Geistdiele.crc2.lineJoin = "round";
-            Geistdiele.crc2.lineWidth = 2.645833;
+            Geistdiele.crc2.lineWidth = 5;
             Geistdiele.crc2.miterLimit = 10;
             Geistdiele.crc2.moveTo(65.2387, 57.0901);
             Geistdiele.crc2.bezierCurveTo(65.2387, 52.0487, 67.3515, 43.157, 70.6007, 43.0302);
@@ -4228,14 +4236,27 @@ var Geistdiele;
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         Geistdiele.canvas.addEventListener("click", handleClick);
-        new Audio("assets/music.mp3").play(); //not playing?
+        new Audio("./assets/music.mp3").play();
         addSeats();
         addWaitingGhosts();
         addSittingGhosts();
         setInterval(loop, 40);
     }
     function handleClick(_event) {
-        let hit = { x: _event.offsetX, y: _event.offsetY };
+        let hit = {
+            x: (_event.offsetX * Geistdiele.canvas.width) / Geistdiele.canvas.clientWidth, //weil canvas scale anders
+            y: (_event.offsetY * Geistdiele.canvas.height) / Geistdiele.canvas.clientHeight,
+        };
+        for (let seat of seats) {
+            const ghost = seat.getGhost();
+            if (!ghost) {
+                return;
+            }
+            if (ghost.interact(hit)) {
+                console.log("HIT");
+                return;
+            }
+        }
     }
     function addSeats() {
         seats.push(new Geistdiele.Seat({ x: 200, y: 450 }, true, false, 1));
@@ -4246,6 +4267,7 @@ var Geistdiele;
         seats.push(new Geistdiele.Seat({ x: 1700, y: 450 }, true, true, 1));
     }
     function addWaitingGhosts() {
+        //solange die Seite geladen ist neue geister kommen und anstehen lassen
         ghostsBehindWall.push(new Geistdiele.Ghost({ x: 300, y: 200 }, "happy"));
     }
     function addSittingGhosts() {
@@ -4257,20 +4279,26 @@ var Geistdiele;
             ghostsBehindWall[i].draw();
         }
         bg.draw();
+        door.draw();
         for (let i = 0; i < seats.length; i++) {
             seats[i].draw();
         }
-        door.draw();
-        for (let i = 0; i < ghostsInfrontOfWall.length; i++) {
-            ghostsInfrontOfWall[i].draw();
-        }
+        /*for (let i: number = 0; i < ghostsInfrontOfWall.length; i++) {
+          ghostsInfrontOfWall[i].draw();
+        }*/
         const freeSeat = seats.find((Seat) => Seat.isFree());
         if (freeSeat) {
+            door.open();
             //ghost sits on that chair
         }
+        else {
+            door.close();
+        }
+        seats.forEach((g) => {
+            g.addGhost();
+        });
     }
     function drawSky() {
-        console.log("draw sky");
         Geistdiele.crc2.fillStyle = "#162032";
         Geistdiele.crc2.rect(0, 0, Geistdiele.crc2.canvas.width, Geistdiele.crc2.canvas.height);
         Geistdiele.crc2.fill();
@@ -4293,6 +4321,7 @@ var Geistdiele;
         free = true;
         mirror = false;
         size;
+        ghost;
         constructor(_position, _free, _mirror, _size) {
             super(_position);
             this.free = _free;
@@ -4301,12 +4330,32 @@ var Geistdiele;
         }
         draw() {
             this.drawSeat();
+            if (this.ghost) {
+                //falls noch nicht existiert
+                this.ghost.draw();
+            }
         }
         setFree(_free) {
             this.free = _free;
         }
         isFree() {
             return this.free;
+        }
+        getGhost() {
+            return this.ghost;
+        }
+        addGhost() {
+            let pos;
+            if (this.mirror) {
+                pos = new Geistdiele.Vector(this.position.x, this.position.y - 70);
+            }
+            else {
+                pos = new Geistdiele.Vector(this.position.x - 100, this.position.y - 70);
+            }
+            this.ghost = new Geistdiele.Ghost(pos, "happy");
+        }
+        removeGhost() {
+            this.ghost = undefined;
         }
         drawSeat() {
             Geistdiele.crc2.save();

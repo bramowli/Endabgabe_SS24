@@ -1,8 +1,9 @@
 namespace Geistdiele {
   export class Seat extends Drawable {
-    free: boolean = true;
-    mirror: boolean = false;
-    size: number;
+    private free: boolean = true;
+    private mirror: boolean = false;
+    private size: number;
+    private ghost: Ghost;
 
     constructor(_position: Vector, _free: boolean, _mirror: boolean, _size: number) {
       super(_position);
@@ -10,17 +11,42 @@ namespace Geistdiele {
       this.mirror = _mirror;
       this.size = _size;
     }
+
     public draw(): void {
       this.drawSeat();
+      if (this.ghost) {
+        //falls noch nicht existiert
+        this.ghost.draw();
+      }
     }
+
     private setFree(_free: boolean): void {
       this.free = _free;
     }
+
     public isFree(): boolean {
       return this.free;
     }
 
-    drawSeat() {
+    public getGhost() {
+      return this.ghost;
+    }
+
+    public addGhost() {
+      let pos;
+      if (this.mirror) {
+        pos = new Vector(this.position.x, this.position.y - 70);
+      } else {
+        pos = new Vector(this.position.x - 100, this.position.y - 70);
+      }
+      this.ghost = new Ghost(pos, "happy");
+    }
+
+    public removeGhost() {
+      this.ghost = undefined;
+    }
+
+    private drawSeat() {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
       if (this.mirror == false) {

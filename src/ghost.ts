@@ -8,7 +8,8 @@ namespace Geistdiele {
     }
 
     public draw(): void {
-      this.drawGhost(this.position);
+      //console.log(`Drawing ghost at position: (${this.position.x}, ${this.position.y})`);
+      this.drawGhost();
       this.drawMouth();
     }
 
@@ -18,22 +19,26 @@ namespace Geistdiele {
 
     private changeEmotion(): void {}
 
-    interact(_hitPosition: Vector) {
+    public interact(_hitPosition: Vector): boolean {
+      //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
+      //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
       if (
         _hitPosition.x >= this.position.x - 57 &&
-        _hitPosition.x <= this.position.x &&
+        _hitPosition.x <= this.position.x + 50 &&
         _hitPosition.y >= this.position.y - 18 &&
         _hitPosition.y <= this.position.y + 12
       ) {
+        console.log("hit"); //not working?
         return true;
       }
       return false;
     }
 
-    drawMouth() { //no mouth?
-      console.log("uff")
+    private drawMouth() {
+      //no mouth?
+      //console.log("uff")
       crc2.save();
-      crc2.translate(0, 0);
+      crc2.translate(this.position.x, this.position.y);
       crc2.strokeStyle = "black";
       if (this.emotion === "happy") {
         crc2.beginPath();
@@ -47,10 +52,11 @@ namespace Geistdiele {
       crc2.restore();
     }
 
-    drawGhost(_position: Vector /*this.position.x, this.position.y * Math.random()*10*/) {
+    private drawGhost() {
       //?
       crc2.save();
-      crc2.translate(_position.x, _position.y);
+      /*this.position.x, this.position.y * Math.random()*10*/
+      crc2.translate(this.position.x, this.position.y);
 
       // #path1
       crc2.beginPath();
@@ -85,7 +91,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(23.6277, 59.2573);
       crc2.bezierCurveTo(23.6277, 54.2159, 25.7405, 45.3242, 28.9898, 45.1974);
@@ -103,7 +109,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(65.2387, 57.0901);
       crc2.bezierCurveTo(65.2387, 52.0487, 67.3515, 43.157, 70.6007, 43.0302);

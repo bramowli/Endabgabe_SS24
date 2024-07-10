@@ -11,7 +11,7 @@ namespace Geistdiele {
 
   function handleLoad(): void {
     canvas.addEventListener("click", handleClick);
-    new Audio("assets/music.mp3").play(); //not playing?
+    new Audio("./assets/music.mp3").play();
 
     addSeats();
     addWaitingGhosts();
@@ -21,7 +21,20 @@ namespace Geistdiele {
   }
 
   function handleClick(_event: MouseEvent): void {
-    let hit: Vector = { x: _event.offsetX, y: _event.offsetY };
+    let hit: Vector = {
+      x: (_event.offsetX * canvas.width) / canvas.clientWidth,  //weil canvas scale anders
+      y: (_event.offsetY * canvas.height) / canvas.clientHeight,
+    };
+    for (let seat of seats) {
+      const ghost = seat.getGhost();
+      if (!ghost) {
+        return;
+      }
+      if (ghost.interact(hit)) {
+        console.log("HIT");
+        return;
+      }
+    }
   }
 
   function addSeats() {
@@ -34,6 +47,7 @@ namespace Geistdiele {
   }
 
   function addWaitingGhosts() {
+    //solange die Seite geladen ist neue geister kommen und anstehen lassen
     ghostsBehindWall.push(new Ghost({ x: 300, y: 200 }, "happy"));
   }
 
@@ -47,23 +61,28 @@ namespace Geistdiele {
       ghostsBehindWall[i].draw();
     }
     bg.draw();
+    door.draw();
     for (let i: number = 0; i < seats.length; i++) {
       seats[i].draw();
     }
-    door.draw();
 
-    for (let i: number = 0; i < ghostsInfrontOfWall.length; i++) {
+    /*for (let i: number = 0; i < ghostsInfrontOfWall.length; i++) {
       ghostsInfrontOfWall[i].draw();
-    }
+    }*/
 
     const freeSeat: Seat | undefined = seats.find((Seat) => Seat.isFree());
     if (freeSeat) {
+      door.open();
       //ghost sits on that chair
+    } else {
+      door.close();
     }
+    seats.forEach((g) => {
+      g.addGhost();
+    });
   }
 
   function drawSky(): void {
-    console.log("draw sky");
     crc2.fillStyle = "#162032";
     crc2.rect(0, 0, crc2.canvas.width, crc2.canvas.height);
     crc2.fill();

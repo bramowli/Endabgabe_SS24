@@ -3,6 +3,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  background-color: black;
 }
 
 #root {
@@ -16,4 +17,10 @@ body {
 #myCanvas {
   height: 80%;
   aspect-ratio: 16 / 9;
+}
+
+h1{
+  color: chocolate;
+  font-size: 40pt;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

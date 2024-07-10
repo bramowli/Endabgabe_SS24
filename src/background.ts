@@ -20,7 +20,6 @@ namespace Geistdiele {
     }
 
     drawStoneStuff(_position: Vector): void {
-      console.log("draw stone");
       // #Ebene-1
       crc2.save();
 
