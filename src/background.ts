@@ -5,18 +5,269 @@ namespace Geistdiele {
     }
 
     public draw(): void {
+      this.drawAllLanterns();
       this.drawStoneStuff(this.position);
       this.drawAllTables();
     }
 
-    //help
-    drawAllTables() {
+    private drawAllTables() {
       let x: number = 200;
 
       for (let i = 0; i <= 2; i++) {
         this.drawTable(x, 450);
         x += 600;
       }
+    }
+
+    private drawAllLanterns() {
+      let x: number = -20;
+
+      for (let i = 0; i <= 3; i++) {
+        //this.drawLight(x,300)
+        this.drawLantern(x, 50);
+        x += 600;
+      }
+    }
+
+    // private drawLight(_x: number, _y: number) {
+    //   crc2.save();
+    //   crc2.translate(0, 0);
+    //   let gradient = crc2.createRadialGradient(_x, _y, 70, _x, _y, 130);
+    //   gradient.addColorStop(0, "#f2b35a");
+    //   gradient.addColorStop(1, "#162032");
+    //   crc2.fillStyle = gradient;
+    //   crc2.fill();
+    // }
+    private drawLantern(_x: number, _y: number) {
+      crc2.save();
+      crc2.translate(_x,_y);
+
+      // #Ebene-7
+
+      // #path4-2
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(173, 132, 57)";
+      crc2.globalAlpha = 1.0;
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.miterLimit = 10;
+      crc2.moveTo(68.8501, 77.1436);
+      crc2.lineTo(127.254, 77.1436);
+      crc2.lineTo(114.503, 135.74);
+      crc2.lineTo(98.6663, 140.633);
+      crc2.lineTo(83.4545, 135.74);
+      crc2.closePath();
+      crc2.fill();
+
+      // #path5-4
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(27, 27, 27)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(98.6583, 44.274);
+      crc2.lineTo(83.4545, 79.8449);
+      crc2.lineTo(108.202, 79.8449);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path6
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(27, 27, 27)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(98.6663, 42.6248);
+      crc2.lineTo(68.4468, 77.1436);
+      crc2.lineTo(83.4545, 79.8449);
+      crc2.lineTo(98.6663, 43.648);
+      crc2.lineTo(109.565, 79.8449);
+      crc2.lineTo(125.521, 75.4967);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path7
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 3.11378;
+      crc2.miterLimit = 10;
+      crc2.moveTo(109.565, 79.8449);
+      crc2.lineTo(83.4545, 79.8449);
+      crc2.lineTo(93.2208, 140.618);
+      crc2.lineTo(103.908, 140.618);
+      crc2.closePath();
+      crc2.stroke();
+
+      // #path8
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(27, 27, 27)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 1.8652;
+      crc2.miterLimit = 10;
+      crc2.moveTo(98.6583, 44.274);
+      crc2.lineTo(83.4396, 78.7115);
+      crc2.lineTo(108.202, 77.7387);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path9
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(127.851, 77.1436);
+      crc2.lineTo(114.503, 136.749);
+      crc2.lineTo(104.765, 140.611);
+      crc2.lineTo(93.2701, 140.633);
+      crc2.lineTo(83.4545, 136.622);
+      crc2.stroke();
+
+      // #path10
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(82.9828, 135.74);
+      crc2.lineTo(68.4468, 79.8449);
+      crc2.stroke();
+
+      // #path11
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(129.289, 74.0783);
+      crc2.lineTo(127.851, 77.1436);
+      crc2.lineTo(124.478, 73.5441);
+      crc2.closePath();
+      crc2.stroke();
+
+      // #path12
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(68.4468, 79.8449);
+      crc2.lineTo(65.5301, 75.3439);
+      crc2.closePath();
+      crc2.stroke();
+
+      // #path13
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(68.8501, 75.3439);
+      crc2.lineTo(65.5249, 75.3439);
+      crc2.stroke();
+
+      // #path14
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(98.6663, 44.2596);
+      crc2.lineTo(92.0883, 35.8604);
+      crc2.lineTo(105.244, 35.8061);
+      crc2.closePath();
+      crc2.stroke();
+
+      // #path15
+      crc2.beginPath();
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 4.2599;
+      crc2.miterLimit = 10;
+      crc2.moveTo(98.6663, 30.1044);
+      crc2.lineTo(98.6663, 43.648);
+      crc2.stroke();
+
+      // #path16
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(0, 0, 0)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 1.8652;
+      crc2.miterLimit = 10;
+      crc2.moveTo(87.6627, 139.396);
+      crc2.lineTo(94.6859, 145.99);
+      crc2.lineTo(103.385, 145.967);
+      crc2.lineTo(110.265, 139.848);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path17
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(0, 0, 0)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 1.8652;
+      crc2.miterLimit = 10;
+      crc2.moveTo(85.2703, 145.99);
+      crc2.lineTo(112.51, 145.99);
+      crc2.lineTo(103.385, 150.433);
+      crc2.lineTo(94.6859, 150.419);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path18
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(0, 0, 0)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(0, 0, 0)";
+      crc2.lineCap = "round";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 1.8652;
+      crc2.miterLimit = 10;
+      crc2.moveTo(95.4135, 150.433);
+      crc2.lineTo(87.6627, 342.321);
+      crc2.lineTo(114.503, 342.321);
+      crc2.lineTo(102.64, 150.433);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+      crc2.restore();
     }
 
     drawStoneStuff(_position: Vector): void {

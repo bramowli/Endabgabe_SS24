@@ -15,6 +15,10 @@ namespace Geistdiele {
 
     private drawCashCounter(): void {}
 
-    private drawWorkspace(): void {}
+    private drawWorkspace(): void {
+      for (const topping of toppings) {
+        new Topping(topping, new Vector(0, 0));
+      }
+    }
   }
 }

@@ -1,11 +1,5 @@
 namespace Geistdiele {
-  export interface FlavourData {
-    name: string;
-    colour: string;
-    price: number;
-  }
-
-  const flavours: FlavourData[] = [
+  export const flavours: IngredientType[] = [
     {
       name: "Vanilla",
       colour: "white",
@@ -24,17 +18,15 @@ namespace Geistdiele {
       price: 20,
     },
   ];
-  const toppings = [
+  export const toppings: IngredientType[] = [
     {
       name: "Spiderlegs",
       colour: "black",
-
       price: 5,
     },
     {
-      name: "Cherries",
+      name: "Eyeballs",
       colour: "white",
-
       price: 10,
     },
     {
@@ -44,7 +36,7 @@ namespace Geistdiele {
       price: 15,
     },
   ];
-  const sauces = [
+  export const sauces: IngredientType[] = [
     {
       name: "Ectoplasm",
       colour: "#00c400",

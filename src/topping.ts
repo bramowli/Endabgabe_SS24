@@ -1,9 +1,11 @@
 namespace Geistdiele {
   export class Topping extends Ingredient {
-    constructor(_type: string, _position: Vector) {
-      super(_type, _position);
+    constructor(_data: IngredientType, _pos: Vector) {
+      super(_data, _pos);
     }
 
-    public draw(): void {}
+    public draw(): void {
+      crc2.strokeStyle = this.data.colour;
+    }
   }
 }

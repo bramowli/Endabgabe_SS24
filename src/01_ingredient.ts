@@ -1,12 +1,16 @@
 namespace Geistdiele {
-  export class Ingredient extends Drawable {
-    type: string;
+  export interface IngredientType {
+    name: string;
+    colour: string;
+    price: number;
+  }
 
-    constructor(_type: string, _position: Vector) {
+  export abstract class Ingredient extends Drawable {
+    protected data: IngredientType;
+
+    constructor(_data: IngredientType, _position: Vector) {
       super(_position);
-      this.type = _type;
+      this.data = _data;
     }
-
-    public draw(): void {}
   }
 }

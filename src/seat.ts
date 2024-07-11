@@ -1,13 +1,11 @@
 namespace Geistdiele {
   export class Seat extends Drawable {
-    private free: boolean = true;
     private mirror: boolean = false;
     private size: number;
     private ghost: Ghost;
 
-    constructor(_position: Vector, _free: boolean, _mirror: boolean, _size: number) {
+    constructor(_position: Vector, _mirror: boolean, _size: number) {
       super(_position);
-      this.free = _free;
       this.mirror = _mirror;
       this.size = _size;
     }
@@ -20,12 +18,8 @@ namespace Geistdiele {
       }
     }
 
-    private setFree(_free: boolean): void {
-      this.free = _free;
-    }
-
     public isFree(): boolean {
-      return this.free;
+      return this.ghost === undefined;
     }
 
     public getGhost() {

@@ -1,14 +1,9 @@
 namespace Geistdiele {
   export class Flavour extends Ingredient {
-    data: FlavourData;
-
-    constructor(_type: string, _position: Vector, _data: FlavourData) {
-      super(_type, _position);
-      this.data = _data;
+    constructor(_data: IngredientType, _position: Vector) {
+      super(_data, _position);
     }
 
-    public draw(): void {
-    
-    }
+    public draw(): void {}
   }
 }

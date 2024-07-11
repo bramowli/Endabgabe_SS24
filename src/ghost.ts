@@ -1,16 +1,24 @@
 namespace Geistdiele {
+  type Emotions = "happy" | "neutral" | "unhappy";
   export class Ghost extends Drawable {
-    emotion: string = "happy";
+    emotion: Emotions;
+    timer: number;
+    speechbubble: Speechbubble;
 
-    constructor(_position: Vector, _emotion: string) {
+    constructor(_position: Vector, _emotion: Emotions) {
       super(_position);
       this.emotion = _emotion;
+      this.timer = 0;
+      setInterval(this.updateTimer.bind(this), 1000);
     }
 
     public draw(): void {
       //console.log(`Drawing ghost at position: (${this.position.x}, ${this.position.y})`);
       this.drawGhost();
       this.drawMouth();
+      if (this.speechbubble) {
+        this.speechbubble.draw();
+      }
     }
 
     public move(): void {}
@@ -23,28 +31,54 @@ namespace Geistdiele {
       //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
       //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
       if (
-        _hitPosition.x >= this.position.x - 57 &&
-        _hitPosition.x <= this.position.x + 50 &&
-        _hitPosition.y >= this.position.y - 18 &&
-        _hitPosition.y <= this.position.y + 12
+        _hitPosition.x >= this.position.x &&
+        _hitPosition.x <= this.position.x + 100 &&
+        _hitPosition.y >= this.position.y &&
+        _hitPosition.y <= this.position.y + 200
       ) {
-        console.log("hit"); //not working?
+        console.log("hit");
         return true;
       }
       return false;
     }
 
+    private updateTimer(): void {
+      this.timer++;
+      // Check for specific times and perform actions
+      if (this.timer === 3) {
+        console.log("10 seconds have passed!");
+        this.addSpeechbubble();
+      }
+      if (this.timer === 40) {
+        console.log("20 seconds have passed!");
+        this.emotion = "neutral";
+        // Perform another action
+      }
+      // Add more conditions as needed
+    }
+
+    public addSpeechbubble() {
+      const pos = new Vector(this.position.x + 95, this.position.y - 80);
+      this.speechbubble = new Speechbubble(pos, true);
+    }
+
     private drawMouth() {
-      //no mouth?
       //console.log("uff")
       crc2.save();
-      crc2.translate(this.position.x, this.position.y);
+      crc2.translate(this.position.x + 32, this.position.y + 90);
       crc2.strokeStyle = "black";
+      crc2.lineWidth = 4;
       if (this.emotion === "happy") {
         crc2.beginPath();
         crc2.moveTo(0, 0);
-        crc2.bezierCurveTo(0, 5, 15, 5, 15, 0);
+        crc2.bezierCurveTo(0, 10, 35, 10, 35, 0);
+        crc2.moveTo(0, 0);
       } else if (this.emotion === "neutral") {
+      } else if (this.emotion === "unhappy") {
+        crc2.beginPath();
+        crc2.moveTo(0, 0);
+        crc2.bezierCurveTo(0, -10, 35, -10, 35, 0);
+        // crc2.moveTo(0,0)
       }
 
       crc2.closePath();
@@ -55,9 +89,8 @@ namespace Geistdiele {
     private drawGhost() {
       //?
       crc2.save();
-      /*this.position.x, this.position.y * Math.random()*10*/
+      /*this.position.x, this.position.y * Math.random()*0.05*/
       crc2.translate(this.position.x, this.position.y);
-
       // #path1
       crc2.beginPath();
       crc2.fillStyle = "rgb(255, 255, 255)";

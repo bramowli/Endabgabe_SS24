@@ -5,7 +5,6 @@ namespace Geistdiele {
   let seats: Seat[] = [];
   const door: Door = new Door({ x: 137, y: 270 }, false);
   let ghostsBehindWall: Ghost[] = [];
-  let ghostsInfrontOfWall: Ghost[] = [];
 
   window.addEventListener("load", handleLoad);
 
@@ -15,14 +14,17 @@ namespace Geistdiele {
 
     addSeats();
     addWaitingGhosts();
-    addSittingGhosts();
+    // Geist hinzufügt: seat[i].addGhost();
+    seats.forEach((g) => {
+      g.addGhost();
+    });
 
     setInterval(loop, 40);
   }
 
   function handleClick(_event: MouseEvent): void {
     let hit: Vector = {
-      x: (_event.offsetX * canvas.width) / canvas.clientWidth,  //weil canvas scale anders
+      x: (_event.offsetX * canvas.width) / canvas.clientWidth, //weil canvas scale anders
       y: (_event.offsetY * canvas.height) / canvas.clientHeight,
     };
     for (let seat of seats) {
@@ -31,6 +33,7 @@ namespace Geistdiele {
         return;
       }
       if (ghost.interact(hit)) {
+        seat.removeGhost();
         console.log("HIT");
         return;
       }
@@ -38,24 +41,31 @@ namespace Geistdiele {
   }
 
   function addSeats() {
-    seats.push(new Seat({ x: 200, y: 450 }, true, false, 1));
-    seats.push(new Seat({ x: 500, y: 450 }, true, true, 1));
-    seats.push(new Seat({ x: 800, y: 450 }, true, false, 1));
-    seats.push(new Seat({ x: 1100, y: 450 }, true, true, 1));
-    seats.push(new Seat({ x: 1400, y: 450 }, true, false, 1));
-    seats.push(new Seat({ x: 1700, y: 450 }, true, true, 1));
+    seats.push(new Seat({ x: 200, y: 450 }, false, 1));
+    seats.push(new Seat({ x: 500, y: 450 }, true, 1));
+    seats.push(new Seat({ x: 800, y: 450 }, false, 1));
+    seats.push(new Seat({ x: 1100, y: 450 }, true, 1));
+    seats.push(new Seat({ x: 1400, y: 450 }, false, 1));
+    seats.push(new Seat({ x: 1700, y: 450 }, true, 1));
   }
 
   function addWaitingGhosts() {
-    //solange die Seite geladen ist neue geister kommen und anstehen lassen
+    //immer neue geister kommen und anstehen lassen
     ghostsBehindWall.push(new Ghost({ x: 300, y: 200 }, "happy"));
   }
 
-  function addSittingGhosts() {
-    ghostsInfrontOfWall.push(new Ghost({ x: 100, y: 400 }, "happy"));
+  function loop() {
+    animate();
+
+    const freeSeat: Seat | undefined = seats.find((Seat) => Seat.isFree());
+    if (freeSeat) {
+      door.open();
+    } else {
+      door.close();
+    }
   }
 
-  function loop() {
+  function animate() {
     drawSky();
     for (let i: number = 0; i < ghostsBehindWall.length; i++) {
       ghostsBehindWall[i].draw();
@@ -65,21 +75,12 @@ namespace Geistdiele {
     for (let i: number = 0; i < seats.length; i++) {
       seats[i].draw();
     }
+  }
 
-    /*for (let i: number = 0; i < ghostsInfrontOfWall.length; i++) {
-      ghostsInfrontOfWall[i].draw();
-    }*/
-
-    const freeSeat: Seat | undefined = seats.find((Seat) => Seat.isFree());
-    if (freeSeat) {
-      door.open();
-      //ghost sits on that chair
-    } else {
-      door.close();
+  function idk() {
+    if (door.open) {
+      ghostsBehindWall.delete[1];
     }
-    seats.forEach((g) => {
-      g.addGhost();
-    });
   }
 
   function drawSky(): void {

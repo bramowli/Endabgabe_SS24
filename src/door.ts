@@ -29,7 +29,7 @@ namespace Geistdiele {
 
     private drawOpenDoor(_position: Vector) {
       crc2.save();
-      crc2.translate(this.position.x, this.position.y);
+      crc2.translate(this.position.x - 90, this.position.y);
 
       // #Ebene-10-0
       crc2.save();
@@ -40,7 +40,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(91.4509, 52.448);
       crc2.bezierCurveTo(91.4509, 45.1997, 75.5628, 25.6647, 49.0945, 25.6647);
@@ -58,7 +58,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(277.04, 51.7673);
       crc2.bezierCurveTo(277.04, 44.519, 292.928, 24.984, 319.396, 24.984);
@@ -76,7 +76,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(92.4919, 86.8728);
       crc2.bezierCurveTo(92.4919, 73.7853, 69.3918, 47.5218, 47.2164, 47.5218);
@@ -89,7 +89,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 2.645833;
+      crc2.lineWidth = 5;
       crc2.miterLimit = 10;
       crc2.moveTo(275.999, 86.192);
       crc2.bezierCurveTo(275.999, 73.1046, 299.099, 46.8411, 321.274, 46.8411);
@@ -102,10 +102,10 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
-      crc2.moveTo(22.2945, 24.064);
-      crc2.lineTo(21.914, 137.902);
+      crc2.moveTo(22.2945, 22);
+      crc2.lineTo(21.914, 140.902);
       crc2.stroke();
 
       // #path6-7
@@ -114,10 +114,10 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
-      crc2.moveTo(346.196, 23.3832);
-      crc2.lineTo(346.577, 137.221);
+      crc2.moveTo(346.196, 22);
+      crc2.lineTo(346.577, 140);
       crc2.stroke();
 
       // #path7-5
@@ -126,7 +126,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
       crc2.moveTo(38.2943, 27.5927);
       crc2.lineTo(37.7476, 138.826);
@@ -138,9 +138,9 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
-      crc2.moveTo(330.196, 26.9119);
+      crc2.moveTo(330.196, 25);
       crc2.lineTo(330.743, 138.145);
       crc2.stroke();
 
@@ -150,7 +150,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
       crc2.moveTo(55.604, 30.3143);
       crc2.lineTo(55.0573, 141.548);
@@ -162,9 +162,9 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
-      crc2.moveTo(312.887, 29.6335);
+      crc2.moveTo(312.887, 27);
       crc2.lineTo(313.433, 140.867);
       crc2.stroke();
 
@@ -174,7 +174,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
       crc2.moveTo(72.5188, 30.2696);
       crc2.lineTo(71.9721, 141.503);
@@ -186,7 +186,7 @@ namespace Geistdiele {
       crc2.strokeStyle = "rgb(0, 0, 0)";
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
-      crc2.lineWidth = 1.127099;
+      crc2.lineWidth = 3;
       crc2.miterLimit = 10;
       crc2.moveTo(295.972, 29.5889);
       crc2.lineTo(296.518, 140.822);

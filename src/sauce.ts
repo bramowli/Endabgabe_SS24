@@ -1,10 +1,9 @@
 namespace Geistdiele {
   export class Sauce extends Ingredient {
-    constructor(_type: string, _position: Vector) {
-      super(_type, _position);
+    constructor(_data: IngredientType, _position: Vector) {
+      super(_data, _position);
     }
 
-    public draw(): void {
-    }
+    public draw(): void {}
   }
 }
