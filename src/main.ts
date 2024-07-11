@@ -75,6 +75,10 @@ namespace Geistdiele {
     for (let i: number = 0; i < seats.length; i++) {
       seats[i].draw();
     }
+    new IceCream("b", {x:870,y:880},3,1).draw()//sth wrong
+    new Flavour(flavours[0],{x:0,y:0}).draw()
+    new Flavour(flavours[1],{x:0,y:0}).draw()
+    new Flavour(flavours[2],{x:0,y:0}).draw()
   }
 
   function idk() {
@@ -82,6 +86,7 @@ namespace Geistdiele {
       ghostsBehindWall.delete[1];
     }
   }
+
 
   function drawSky(): void {
     crc2.fillStyle = "#162032";

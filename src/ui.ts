@@ -19,6 +19,9 @@ namespace Geistdiele {
       for (const topping of toppings) {
         new Topping(topping, new Vector(0, 0));
       }
+      
     }
+
+    
   }
 }

@@ -2,6 +2,7 @@ namespace Geistdiele {
   export interface IngredientType {
     name: string;
     colour: string;
+    lineColour: string;
     price: number;
   }
 

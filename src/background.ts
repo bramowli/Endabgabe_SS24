@@ -8,6 +8,7 @@ namespace Geistdiele {
       this.drawAllLanterns();
       this.drawStoneStuff(this.position);
       this.drawAllTables();
+      this.drawCounterBackground()
     }
 
     private drawAllTables() {
@@ -40,7 +41,7 @@ namespace Geistdiele {
     // }
     private drawLantern(_x: number, _y: number) {
       crc2.save();
-      crc2.translate(_x,_y);
+      crc2.translate(_x, _y);
 
       // #Ebene-7
 
@@ -4124,6 +4125,81 @@ namespace Geistdiele {
       crc2.bezierCurveTo(144.964, 16.955, 149.733, 10.3808, 149.733, 3.80581);
       crc2.bezierCurveTo(149.733, 0.306864, 153.797, 3.80581, 155.591, 3.80581);
       crc2.bezierCurveTo(157.385, 3.80581, 148.997, 16.5737, 148.997, 16.5737);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+      crc2.restore();
+    }
+
+    private drawCounterBackground() {
+      crc2.save();
+      
+      // #Ebene-14
+
+      // #path1
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(122, 122, 122)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(203, 203, 203)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 10.0;
+      crc2.miterLimit = 10;
+      crc2.moveTo(141.717, 804.843);
+      crc2.lineTo(303.622, 805.146);
+      crc2.lineTo(206.684, 1063.33);
+      crc2.lineTo(19.4702, 1063.33);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path2
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(122, 122, 122)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(203, 203, 203)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 10.0;
+      crc2.miterLimit = 10;
+      crc2.moveTo(346.101, 805.146);
+      crc2.lineTo(509.416, 805.146);
+      crc2.lineTo(431.656, 1063.63);
+      crc2.lineTo(244.442, 1063.63);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path3
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(122, 122, 122)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(203, 203, 203)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 10.0;
+      crc2.miterLimit = 10;
+      crc2.moveTo(553.346, 804.843);
+      crc2.lineTo(714.715, 804.843);
+      crc2.lineTo(659.871, 1063.63);
+      crc2.lineTo(472.657, 1063.63);
+      crc2.closePath();
+      crc2.fill();
+      crc2.stroke();
+
+      // #path4
+      crc2.beginPath();
+      crc2.fillStyle = "rgb(122, 122, 122)";
+      crc2.globalAlpha = 1.0;
+      crc2.strokeStyle = "rgb(203, 203, 203)";
+      crc2.lineCap = "butt";
+      crc2.lineJoin = "round";
+      crc2.lineWidth = 10.0;
+      crc2.miterLimit = 10;
+      crc2.moveTo(766.579, 804.843);
+      crc2.lineTo(1180.69, 799.649);
+      crc2.lineTo(1222.27, 1063.63);
+      crc2.lineTo(707.692, 1063.63);
       crc2.closePath();
       crc2.fill();
       crc2.stroke();
