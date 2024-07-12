@@ -4,11 +4,13 @@ namespace Geistdiele {
     emotion: Emotions;
     timer: number;
     speechbubble: Speechbubble;
+    activateSpeechbubble: boolean;
 
-    constructor(_position: Vector, _emotion: Emotions) {
+    constructor(_position: Vector, _emotion: Emotions, _activateSpeechbubble: boolean) {
       super(_position);
       this.emotion = _emotion;
       this.timer = 0;
+      this.activateSpeechbubble = _activateSpeechbubble;
       setInterval(this.updateTimer.bind(this), 1000);
     }
 
@@ -21,7 +23,10 @@ namespace Geistdiele {
       }
     }
 
-    public move(): void {}
+    public move(_x: number, _y: number): void {
+      this.position.x += _x;
+      this.position.y += _y;
+    }
 
     private order(): void {}
 
@@ -43,8 +48,8 @@ namespace Geistdiele {
     }
 
     private updateTimer(): void {
+      //kann ich den auch aus der main benutzen?
       this.timer++;
-      // Check for specific times and perform actions
       if (this.timer === 3) {
         console.log("10 seconds have passed!");
         this.addSpeechbubble();
@@ -52,14 +57,18 @@ namespace Geistdiele {
       if (this.timer === 40) {
         console.log("20 seconds have passed!");
         this.emotion = "neutral";
-        // Perform another action
       }
-      // Add more conditions as needed
+      if (this.timer === 70) {
+        console.log("20 seconds have passed!");
+        this.emotion = "unhappy";
+      }
     }
 
     public addSpeechbubble() {
-      const pos = new Vector(this.position.x + 95, this.position.y - 80);
-      this.speechbubble = new Speechbubble(pos, true);
+      if (this.activateSpeechbubble === true) {
+        const pos = new Vector(this.position.x + 95, this.position.y - 80);
+        this.speechbubble = new Speechbubble(pos, true);
+      }
     }
 
     private drawMouth() {

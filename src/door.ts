@@ -1,6 +1,6 @@
 namespace Geistdiele {
   export class Door extends Drawable {
-    isOpen: boolean = false;
+    private isOpen: boolean = false;
 
     constructor(_position: Vector, _open: boolean) {
       super(_position);

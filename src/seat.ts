@@ -33,7 +33,7 @@ namespace Geistdiele {
       } else {
         pos = new Vector(this.position.x - 100, this.position.y - 70);
       }
-      this.ghost = new Ghost(pos, "happy");
+      this.ghost = new Ghost(pos, "happy", true);
     }
 
     public removeGhost() {
@@ -44,7 +44,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
       if (this.mirror == false) {
-        crc2.scale(-this.size, this.size); //why no work?
+        crc2.scale(-this.size, this.size);
       } else {
         crc2.scale(this.size, this.size);
       }

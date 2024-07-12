@@ -1,22 +1,35 @@
 namespace Geistdiele {
   export class IceCream extends Drawable {
-    type: string;
-    scoops: number;
-    size: number;
+    private iceBalls: IceBall[] = [];
+    private topping: Topping;
+    private sauce: Sauce;
+    private size: number;
 
-    constructor(_type: string, _position: Vector, _scoops: number, _size: number) {
+    constructor(_position: Vector, _size: number) {
       super(_position);
-      this.type = _type;
-      this.scoops = _scoops;
       this.size = _size;
     }
 
-    public draw(): void {
-      this.drawCone()
-        new Sauce(sauces[0],{x:700,y:700}).draw()
-        
+    public addIceBall(_flavour: IngredientType): void {
+      if (this.iceBalls.length < 3) {
+        this.iceBalls.push(new IceBall(_flavour, { x: this.position.x+8, y: this.position.y -25}));
+      }
     }
-    
+
+    public addSauce(_flavour: IngredientType) {
+      this.sauce = new Sauce(_flavour, { x: this.position.x, y: this.position.y });
+    }
+
+    public addTopping(_flavour: IngredientType) {
+      this.topping = new Topping(_flavour, { x: this.position.x, y: this.position.y });
+    }
+
+    public draw(): void {
+      this.drawCone();
+      this.sauce?.draw();
+      this.topping?.draw();
+      this.iceBalls[0]?.draw();
+    }
 
     private drawCone(): void {
       crc2.save();
