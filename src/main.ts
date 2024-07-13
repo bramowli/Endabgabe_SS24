@@ -5,11 +5,16 @@ namespace Geistdiele {
   let seats: Seat[] = [];
   const door: Door = new Door({ x: 137, y: 270 }, false);
   let ghostsBehindWall: Ghost[] = [];
-  const icetray = [new Icetray(flavours[0], "left", { x: 0, y: 0 }),
-  new Icetray(flavours[1], "middle", { x: 0, y: 0 }),
-  new Icetray(flavours[2], "right", { x: 0, y: 0 })]
+  const icetray = [
+    new Icetray(flavours[0], "left", { x: 0, y: 0 }),
+    new Icetray(flavours[1], "middle", { x: 0, y: 0 }),
+    new Icetray(flavours[2], "right", { x: 0, y: 0 }),
+  ];
+  const toppingInGlass = [
+    new Topping(toppings[0], "left", { x: 0, y: 0 }),
+    new Topping(toppings[1], "right", { x: 0, y: 0 }),
+  ];
   const ice = new IceCream({ x: 870, y: 880 }, 1);
-
 
   window.addEventListener("load", handleLoad);
 
@@ -39,10 +44,27 @@ namespace Geistdiele {
       }
     }
 
+    if (icetray[0].interact(hit)) {
+      //new ball
+      ice.addIceBall(flavours[0]);
+      console.log("left"); //not working as intended
+    }
     if (icetray[1].interact(hit)) {
       //new ball
-      ice.addIceBall(flavours[1])
-      console.log("purple ball")//not working as intended
+      console.log("middle"); //not working as intended
+
+      ice.addIceBall(flavours[1]);
+    }
+    if (icetray[2].interact(hit)) {
+      //new ball
+      ice.addIceBall(flavours[2]);
+      console.log("right"); //not working as intended
+    }
+
+    if (toppingInGlass[0].interact(hit)) {
+      //new topping
+      ice.addTopping(flavours[0]);
+      console.log("sprinkles"); //not working as intended
     }
   }
 
@@ -93,15 +115,19 @@ namespace Geistdiele {
     for (let i: number = 0; i < seats.length; i++) {
       seats[i].draw();
     }
-    
-    ice.addIceBall(flavours[0]);
+    // ice.addTopping(toppings[0]);
+    // ice.addIceBall(flavours[0]); //warum vor den anderen?
+    // ice.addSauce(sauces[0]);
     ice.draw();
 
     icetray[0].draw();
     icetray[1].draw();
     icetray[2].draw();
 
-    new UI({x:0,y:0}).draw()
+    toppingInGlass[0].draw();
+    toppingInGlass[1].draw();
+
+    new UI({ x: 0, y: 0 }).draw();
   }
 
   function drawSky(): void {

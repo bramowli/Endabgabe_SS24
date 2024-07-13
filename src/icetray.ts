@@ -21,15 +21,35 @@ namespace Geistdiele {
     public interact(_hitPosition: Vector): boolean {
       console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
       //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
-      if (_hitPosition.x >= 120 && _hitPosition.x <= 280 && _hitPosition.y >= 800 && _hitPosition.y <= 1050) {
+      if (
+        this.icetrayPosition === "left" &&
+        _hitPosition.x >= 120 &&
+        _hitPosition.x <= 280 &&
+        _hitPosition.y >= 800 &&
+        _hitPosition.y <= 1050
+      ) {
         console.log("hit blue");
         return true;
-      } else if (_hitPosition.x >= 310 && _hitPosition.x <= 490 && _hitPosition.y >= 800 && _hitPosition.y <= 1050) {
+      } else if (
+        this.icetrayPosition === "middle" &&
+        _hitPosition.x >= 310 &&
+        _hitPosition.x <= 490 &&
+        _hitPosition.y >= 800 &&
+        _hitPosition.y <= 1050
+      ) {
         console.log("hit purple");
-      } else if (_hitPosition.x >= 530 && _hitPosition.x <= 695 && _hitPosition.y >= 800 && _hitPosition.y <= 1050) {
+        return true;
+      } else if (
+        this.icetrayPosition === "right" &&
+        _hitPosition.x >= 530 &&
+        _hitPosition.x <= 695 &&
+        _hitPosition.y >= 800 &&
+        _hitPosition.y <= 1050
+      ) {
         console.log("hit orange");
-        return false;
+        return true;
       }
+      return false;
     }
 
     private drawLeftIce() {

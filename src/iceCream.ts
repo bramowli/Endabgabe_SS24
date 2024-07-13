@@ -1,7 +1,7 @@
 namespace Geistdiele {
   export class IceCream extends Drawable {
     private iceBalls: IceBall[] = [];
-    private topping: Topping;
+    private topping: Sprinkles;
     private sauce: Sauce;
     private size: number;
 
@@ -12,7 +12,11 @@ namespace Geistdiele {
 
     public addIceBall(_flavour: IngredientType): void {
       if (this.iceBalls.length < 3) {
-        this.iceBalls.push(new IceBall(_flavour, { x: this.position.x+8, y: this.position.y -25}));
+        if (this.iceBalls.length === 0) {
+          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 8, y: this.position.y - 25 }));
+        }else if(this.iceBalls.length ===1){
+          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 18, y: this.position.y - 25 }))
+        }
       }
     }
 
@@ -21,15 +25,17 @@ namespace Geistdiele {
     }
 
     public addTopping(_flavour: IngredientType) {
-      this.topping = new Topping(_flavour, { x: this.position.x, y: this.position.y });
+      this.topping = new Sprinkles(_flavour, { x: this.position.x, y: this.position.y });
     }
 
     public draw(): void {
       this.drawCone();
+      this.iceBalls[0]?.draw();
       this.sauce?.draw();
       this.topping?.draw();
-      this.iceBalls[0]?.draw();
     }
+
+    // if 3 iceballs an drei stellen if 1 nur eine
 
     private drawCone(): void {
       crc2.save();
