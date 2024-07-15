@@ -1,5 +1,5 @@
 namespace Geistdiele {
   export interface Interactable {
-    interact(): void;
+    interact(_hitPosition: Vector): boolean;
   }
 }

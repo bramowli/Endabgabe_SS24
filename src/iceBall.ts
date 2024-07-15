@@ -1,7 +1,8 @@
 namespace Geistdiele {
   export class IceBall extends Ingredient {
-    constructor(_data: IngredientType, _position: Vector) {
-      super(_data, _position);
+    
+    constructor(_data: IngredientType, _position: Vector, _size:number) {
+      super(_data, _position, _size);
     }
 
     public draw(): void {
@@ -16,6 +17,7 @@ namespace Geistdiele {
       // #Ebene-9
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
+      crc2.scale(this.size, this.size);
 
       // #path1-6
       crc2.beginPath();

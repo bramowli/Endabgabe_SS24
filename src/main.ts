@@ -6,15 +6,20 @@ namespace Geistdiele {
   const door: Door = new Door({ x: 137, y: 270 }, false);
   let ghostsBehindWall: Ghost[] = [];
   const icetray = [
-    new Icetray(flavours[0], "left", { x: 0, y: 0 }),
-    new Icetray(flavours[1], "middle", { x: 0, y: 0 }),
-    new Icetray(flavours[2], "right", { x: 0, y: 0 }),
+    new Icetray(flavours[0], "left", { x: 0, y: 0 },1),
+    new Icetray(flavours[1], "middle", { x: 0, y: 0 },1),
+    new Icetray(flavours[2], "right", { x: 0, y: 0 },1),
+  ];
+  const sauceInBottle = [
+    new SauceInBottle(sauces[0], "left", { x: 0, y: 0 },1),
+    new SauceInBottle(sauces[1], "right", { x: 0, y: 0 },1),
   ];
   const toppingInGlass = [
-    new Topping(toppings[0], "left", { x: 0, y: 0 }),
-    new Topping(toppings[1], "right", { x: 0, y: 0 }),
+    new Topping(toppings[0], "left", { x: 0, y: 0 },1),
+    new Topping(toppings[1], "right", { x: 0, y: 0 },1),
   ];
-  const ice = new IceCream({ x: 870, y: 880 }, 1);
+  let ice = new IceCream({ x: 870, y: 880 }, 1);
+  const ui = new UI({ x: 0, y: 0 });
 
   window.addEventListener("load", handleLoad);
 
@@ -38,6 +43,7 @@ namespace Geistdiele {
         continue;
       }
       if (ghost.interact(hit)) {
+        //check if made icecream is same as wanted
         seat.removeGhost();
         console.log("HIT");
         return;
@@ -47,24 +53,44 @@ namespace Geistdiele {
     if (icetray[0].interact(hit)) {
       //new ball
       ice.addIceBall(flavours[0]);
-      console.log("left"); //not working as intended
+      console.log("left");
     }
     if (icetray[1].interact(hit)) {
       //new ball
-      console.log("middle"); //not working as intended
-
+      console.log("middle");
       ice.addIceBall(flavours[1]);
     }
     if (icetray[2].interact(hit)) {
       //new ball
       ice.addIceBall(flavours[2]);
-      console.log("right"); //not working as intended
+      console.log("right");
+    }
+
+    if (sauceInBottle[0].interact(hit)) {
+      //new sauce
+      ice.addSauce(sauces[0]);
+      console.log("drizzle");
+    }
+    if (sauceInBottle[1].interact(hit)) {
+      //new sauce
+      ice.addSauce(sauces[1]);
+      console.log("drizzle");
     }
 
     if (toppingInGlass[0].interact(hit)) {
       //new topping
-      ice.addTopping(flavours[0]);
-      console.log("sprinkles"); //not working as intended
+      ice.addTopping(toppings[0]);
+      console.log("sprinkles");
+    }
+    if (toppingInGlass[1].interact(hit)) {
+      //warum geht die nicht?
+      //new topping
+      ice.addTopping(toppings[1]);
+      console.log("sprinkles");
+    }
+
+    if (ui.interact(hit)) {
+      ice = new IceCream({ x: 870, y: 880 }, 1);
     }
   }
 
@@ -127,7 +153,10 @@ namespace Geistdiele {
     toppingInGlass[0].draw();
     toppingInGlass[1].draw();
 
-    new UI({ x: 0, y: 0 }).draw();
+    sauceInBottle[0].draw();
+    sauceInBottle[1].draw();
+
+    ui.draw();
   }
 
   function drawSky(): void {

@@ -21,36 +21,30 @@ namespace Geistdiele {
   ];
   export const toppings: IngredientType[] = [
     {
-      name: "Spiderlegs",
-      colour: "black",
+      name: "Cicadalegs",
+      colour: "rgb(227, 150, 98)",
       lineColour: "green",
       price: 5,
     },
     {
-      name: "Eyeballs",
-      colour: "white",
+      name: "Spiderlegs",
+      colour: "black",
       lineColour: "green",
       price: 10,
-    },
-    {
-      name: "Chocolate Chips",
-      colour: "white",
-      lineColour: "green",
-      price: 15,
     },
   ];
   export const sauces: IngredientType[] = [
     {
-      name: "Ectoplasm",
-      colour: "#00c400",
-      lineColour: "green",
-      price: 5,
-    },
-    {
       name: "blood",
       colour: "#680005",
-      lineColour: "green",
+      lineColour: "#680005",
       price: 10,
+    },
+    {
+      name: "Ectoplasm",
+      colour: "rgb(60, 158, 28)",
+      lineColour: "rgb(60, 158, 28)",
+      price: 5,
     },
   ];
 }

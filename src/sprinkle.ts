@@ -1,16 +1,16 @@
 namespace Geistdiele {
   export class Sprinkles extends Ingredient {
-    constructor(_data: IngredientType, _pos: Vector) {
-      super(_data, _pos);
+    constructor(_data: IngredientType, _pos: Vector, _size:number) {
+      super(_data, _pos, _size);
     }
 
     public draw(): void {
-      this.drawSprinkles()
+      this.drawSprinkles();
     }
 
     private drawSprinkles() {
       crc2.save();
-      crc2.translate(this.position.x,this.position.y);
+      crc2.translate(this.position.x, this.position.y);
 
       // #Ebene-20
       crc2.save();
@@ -31,7 +31,7 @@ namespace Geistdiele {
       // #path2
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -44,7 +44,7 @@ namespace Geistdiele {
       // #path3
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -57,7 +57,7 @@ namespace Geistdiele {
       // #path4
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -70,7 +70,7 @@ namespace Geistdiele {
       // #path5-7
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle =this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -83,7 +83,7 @@ namespace Geistdiele {
       // #path6-7
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -96,7 +96,7 @@ namespace Geistdiele {
       // #path7-0
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -109,7 +109,7 @@ namespace Geistdiele {
       // #path8-0
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -122,7 +122,7 @@ namespace Geistdiele {
       // #path9-3
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -135,7 +135,7 @@ namespace Geistdiele {
       // #path10-0
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -148,7 +148,7 @@ namespace Geistdiele {
       // #path11-1
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -161,7 +161,7 @@ namespace Geistdiele {
       // #path12-5
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -174,7 +174,7 @@ namespace Geistdiele {
       // #path13-8
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -187,7 +187,7 @@ namespace Geistdiele {
       // #path14-1
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -200,7 +200,7 @@ namespace Geistdiele {
       // #path15-1
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;
@@ -213,7 +213,7 @@ namespace Geistdiele {
       // #path16-1
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(183, 107, 56)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;

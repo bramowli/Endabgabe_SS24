@@ -1,7 +1,7 @@
 namespace Geistdiele {
   export class Sauce extends Ingredient {
-    constructor(_data: IngredientType, _position: Vector) {
-      super(_data, _position);
+    constructor(_data: IngredientType, _position: Vector, _size:number) {
+      super(_data, _position, _size);
     }
 
     public draw(): void {
@@ -16,7 +16,7 @@ namespace Geistdiele {
       crc2.beginPath();
       crc2.fillStyle = this.data.colour;
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle = "rgb(149, 255, 51)";
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.55471;

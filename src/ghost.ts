@@ -68,6 +68,7 @@ namespace Geistdiele {
       if (this.activateSpeechbubble === true) {
         const pos = new Vector(this.position.x + 95, this.position.y - 80);
         this.speechbubble = new Speechbubble(pos, true);
+        this.speechbubble.addRandomIcecream();
       }
     }
 

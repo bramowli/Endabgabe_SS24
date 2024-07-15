@@ -1,7 +1,7 @@
 namespace Geistdiele {
   export class Speechbubble extends Drawable {
-    content: Drawable;
-    mirror: boolean;
+    private content: Drawable;
+    private mirror: boolean;
 
     constructor(_position: Vector, _mirror: boolean) {
       super(_position);
@@ -10,6 +10,19 @@ namespace Geistdiele {
 
     public draw(): void {
       this.drawSpeechbubble();
+      if (this.content) {
+        //was wird da abgefragt?
+        this.content.draw();
+      }
+    }
+
+    //draw random icecream
+    public addRandomIcecream() {
+      const ice = new IceCream({ x: this.position.x + 45, y: this.position.y + 40 }, 0.4);
+      // TODO add random balls, sauces, toppings
+      const randomFlavour = Math.floor(Math.random() * flavours.length);
+      ice.addIceBall(flavours[randomFlavour]);
+      this.content = ice;
     }
 
     private drawSpeechbubble() {

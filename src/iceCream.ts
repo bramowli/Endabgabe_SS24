@@ -1,8 +1,8 @@
 namespace Geistdiele {
   export class IceCream extends Drawable {
     private iceBalls: IceBall[] = [];
-    private topping: Sprinkles;
-    private sauce: Sauce;
+    private sprinkles: Sprinkles[] = [];
+    private sauces: Sauce[] = [];
     private size: number;
 
     constructor(_position: Vector, _size: number) {
@@ -13,34 +13,86 @@ namespace Geistdiele {
     public addIceBall(_flavour: IngredientType): void {
       if (this.iceBalls.length < 3) {
         if (this.iceBalls.length === 0) {
-          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 8, y: this.position.y - 25 }));
-        }else if(this.iceBalls.length ===1){
-          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 18, y: this.position.y - 25 }))
+          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 8, y: this.position.y - 25 },1));
+        } else if (this.iceBalls.length === 1) {
+          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 70, y: this.position.y - 25 },1));
+        } else if (this.iceBalls.length === 2) {
+          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 45, y: this.position.y - 70 },1));
         }
       }
     }
 
-    public addSauce(_flavour: IngredientType) {
-      this.sauce = new Sauce(_flavour, { x: this.position.x, y: this.position.y });
+    public addSauce(_sauces: IngredientType) {
+      if (this.sauces.length === 0) {
+        if (this.iceBalls.length >= 1) {
+          //123 sind komisch müsste 012 sein geht aber nicht
+          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 2, y: this.position.y - 28 },1));
+        }
+        if (this.iceBalls.length >= 2) {
+          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 65, y: this.position.y - 28 },1));
+        }
+        if (this.iceBalls.length === 3) {
+          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 40, y: this.position.y - 75 },1,));
+        }
+      }
     }
 
-    public addTopping(_flavour: IngredientType) {
-      this.topping = new Sprinkles(_flavour, { x: this.position.x, y: this.position.y });
+    public addTopping(_toppings: IngredientType) {
+      if (this.sprinkles.length === 0) {
+        if (this.iceBalls.length >= 1) {
+          //123 sind komisch müsste 012 sein geht aber nicht
+          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 2, y: this.position.y - 28 },1));
+        }
+        if (this.iceBalls.length >= 2) {
+          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 65, y: this.position.y - 28 },1));
+        }
+        if (this.iceBalls.length === 3) {
+          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 40, y: this.position.y - 75 },1));
+        }
+      }
+    }
+
+    public getIceBalls(): IceBall[] {
+      return this.iceBalls;
+    }
+
+    public getSauce(): Sauce {
+      return this.sauces[0];
+    }
+
+    public getSprinkles(): Sprinkles {
+      return this.sprinkles[0];
     }
 
     public draw(): void {
       this.drawCone();
       this.iceBalls[0]?.draw();
-      this.sauce?.draw();
-      this.topping?.draw();
+      this.iceBalls[1]?.draw();
+      this.iceBalls[2]?.draw();
+      this.sauces[0]?.draw();
+      this.sauces[1]?.draw();
+      this.sauces[2]?.draw();
+      this.sprinkles[0]?.draw();
+      this.sprinkles[1]?.draw();
+      this.sprinkles[2]?.draw();
     }
 
-    // if 3 iceballs an drei stellen if 1 nur eine
+
+    public equals(_iceCream: IceCream): boolean {
+      if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {
+        return false;
+      }
+      if (_iceCream.getSprinkles()?.getName() !== this.getSprinkles()?.getName()) {
+        return false;
+      }
+      // TODO
+      return true;
+    }
 
     private drawCone(): void {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
-
+      crc2.scale(this.size, this.size);
       // #Ebene-8
 
       // #path1

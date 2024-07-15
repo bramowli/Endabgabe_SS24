@@ -1,10 +1,10 @@
 namespace Geistdiele {
   type IcetrayPositionType = "left" | "middle" | "right";
-  export class Icetray extends Ingredient {
+  export class Icetray extends Ingredient implements Interactable {
     private icetrayPosition: IcetrayPositionType;
 
-    constructor(_data: IngredientType, _icetrayPosition: IcetrayPositionType, _position: Vector) {
-      super(_data, _position);
+    constructor(_data: IngredientType, _icetrayPosition: IcetrayPositionType, _position: Vector, _size:number) {
+      super(_data, _position, _size);
       this.icetrayPosition = _icetrayPosition;
     }
 
