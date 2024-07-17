@@ -11,6 +11,7 @@ namespace Geistdiele {
     private drawSauce() {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
+      crc2.scale(this.size, this.size);
 
       // #path1
       crc2.beginPath();

@@ -1,10 +1,10 @@
 namespace Geistdiele {
   type Emotions = "happy" | "neutral" | "unhappy";
   export class Ghost extends Drawable {
-    emotion: Emotions;
-    timer: number;
-    speechbubble: Speechbubble;
-    activateSpeechbubble: boolean;
+    private emotion: Emotions;
+    private timer: number;
+    private speechbubble: Speechbubble;
+    private activateSpeechbubble: boolean;
 
     constructor(_position: Vector, _emotion: Emotions, _activateSpeechbubble: boolean) {
       super(_position);
@@ -24,13 +24,10 @@ namespace Geistdiele {
     }
 
     public move(_x: number, _y: number): void {
+      //zum Aufrücken
       this.position.x += _x;
       this.position.y += _y;
     }
-
-    private order(): void {}
-
-    private changeEmotion(): void {}
 
     public interact(_hitPosition: Vector): boolean {
       //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
@@ -67,9 +64,13 @@ namespace Geistdiele {
     public addSpeechbubble() {
       if (this.activateSpeechbubble === true) {
         const pos = new Vector(this.position.x + 95, this.position.y - 80);
-        this.speechbubble = new Speechbubble(pos, true);
+        this.speechbubble = new Speechbubble(pos);
         this.speechbubble.addRandomIcecream();
       }
+    }
+
+    public getSpeechbubble() {
+      return this.speechbubble;
     }
 
     private drawMouth() {

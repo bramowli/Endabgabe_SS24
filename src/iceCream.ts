@@ -10,44 +10,73 @@ namespace Geistdiele {
       this.size = _size;
     }
 
-    public addIceBall(_flavour: IngredientType): void {
+    //if ice in speechbubble size= 0.4
+    //if not size = 1
+    //const smallSize: number= 0.5
+    //const bigSize:number = 1
+
+    // public getSpeechbubble() { //geht auch nicht1
+    //   return this.speechbubble;
+    // }
+
+    // if(this.speechbubble){
+    //   this.position=500,400
+    // }
+
+    public addIceBall(_flavour: IngredientType, _size: number): void {
       if (this.iceBalls.length < 3) {
         if (this.iceBalls.length === 0) {
-          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 8, y: this.position.y - 25 },1));
+          this.iceBalls.push(
+            new IceBall(_flavour, { x: this.position.x + 8 * _size, y: this.position.y - 25 * _size }, _size)
+          );
         } else if (this.iceBalls.length === 1) {
-          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 70, y: this.position.y - 25 },1));
+          this.iceBalls.push(
+            new IceBall(_flavour, { x: this.position.x + 70 * _size, y: this.position.y - 25 * _size }, _size)
+          );
         } else if (this.iceBalls.length === 2) {
-          this.iceBalls.push(new IceBall(_flavour, { x: this.position.x + 45, y: this.position.y - 70 },1));
+          this.iceBalls.push(
+            new IceBall(_flavour, { x: this.position.x + 45 * _size, y: this.position.y - 70 * _size }, _size)
+          );
         }
       }
     }
 
-    public addSauce(_sauces: IngredientType) {
+    public addSauce(_sauces: IngredientType, _size: number) {
       if (this.sauces.length === 0) {
         if (this.iceBalls.length >= 1) {
-          //123 sind komisch müsste 012 sein geht aber nicht
-          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 2, y: this.position.y - 28 },1));
+          this.sauces.push(
+            new Sauce(_sauces, { x: this.position.x + 2 * _size, y: this.position.y - 28 * _size }, _size)
+          );
         }
         if (this.iceBalls.length >= 2) {
-          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 65, y: this.position.y - 28 },1));
+          this.sauces.push(
+            new Sauce(_sauces, { x: this.position.x + 65 * _size, y: this.position.y - 28 * _size }, _size)
+          );
         }
         if (this.iceBalls.length === 3) {
-          this.sauces.push(new Sauce(_sauces, { x: this.position.x + 40, y: this.position.y - 75 },1,));
+          this.sauces.push(
+            new Sauce(_sauces, { x: this.position.x + 40 * _size, y: this.position.y - 75 * _size }, _size)
+          );
         }
       }
     }
 
-    public addTopping(_toppings: IngredientType) {
+    public addTopping(_toppings: IngredientType, _size: number) {
       if (this.sprinkles.length === 0) {
         if (this.iceBalls.length >= 1) {
-          //123 sind komisch müsste 012 sein geht aber nicht
-          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 2, y: this.position.y - 28 },1));
+          this.sprinkles.push(
+            new Sprinkles(_toppings, { x: this.position.x + 2 * _size, y: this.position.y - 28 * _size }, _size)
+          );
         }
         if (this.iceBalls.length >= 2) {
-          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 65, y: this.position.y - 28 },1));
+          this.sprinkles.push(
+            new Sprinkles(_toppings, { x: this.position.x + 65 * _size, y: this.position.y - 28 * _size }, _size)
+          );
         }
         if (this.iceBalls.length === 3) {
-          this.sprinkles.push(new Sprinkles(_toppings, { x: this.position.x + 40, y: this.position.y - 75 },1));
+          this.sprinkles.push(
+            new Sprinkles(_toppings, { x: this.position.x + 40 * _size, y: this.position.y - 75 * _size }, _size)
+          );
         }
       }
     }
@@ -77,15 +106,19 @@ namespace Geistdiele {
       this.sprinkles[2]?.draw();
     }
 
-
     public equals(_iceCream: IceCream): boolean {
-      if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {
+      if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {//? weil es sind ja nicht immer alle da
         return false;
       }
       if (_iceCream.getSprinkles()?.getName() !== this.getSprinkles()?.getName()) {
         return false;
       }
-      // TODO
+      const iceBalls = _iceCream.getIceBalls();
+      for (let i = 0; i < iceBalls.length; i++) {
+        if (iceBalls[i]?.getName() !== this.iceBalls[i]?.getName()) {
+          return false;
+        }
+      }
       return true;
     }
 

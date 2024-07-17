@@ -888,6 +888,10 @@ var Geistdiele;
             }
             return false;
         }
+        increaseCounter() {
+            //if ghost leave
+            this.cashCount++;
+        }
         drawWorkspace() {
             for (const topping of Geistdiele.toppings) {
                 new Geistdiele.Sprinkles(topping, new Geistdiele.Vector(0, 0), 1);
@@ -909,7 +913,7 @@ var Geistdiele;
             Geistdiele.crc2.save();
             Geistdiele.crc2.fillStyle = "rgb(158, 125, 72)";
             Geistdiele.crc2.font = "50px Times new Roman";
-            Geistdiele.crc2.fillText("moneyyyyyy", 1570, 90);
+            Geistdiele.crc2.fillText(this.cashCount.toString(), 1570, 90);
             Geistdiele.crc2.restore();
         }
         drawCashCounter() {
@@ -5141,7 +5145,7 @@ var Geistdiele;
     Geistdiele.toppings = [
         {
             name: "Cicadalegs",
-            colour: "rgb(227, 150, 98)",
+            colour: "rgb(183, 107, 56)",
             lineColour: "green",
             price: 5,
         },
@@ -5526,11 +5530,10 @@ var Geistdiele;
             }
         }
         move(_x, _y) {
+            //zum Aufrücken
             this.position.x += _x;
             this.position.y += _y;
         }
-        order() { }
-        changeEmotion() { }
         interact(_hitPosition) {
             //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
             //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
@@ -5562,9 +5565,12 @@ var Geistdiele;
         addSpeechbubble() {
             if (this.activateSpeechbubble === true) {
                 const pos = new Geistdiele.Vector(this.position.x + 95, this.position.y - 80);
-                this.speechbubble = new Geistdiele.Speechbubble(pos, true);
+                this.speechbubble = new Geistdiele.Speechbubble(pos);
                 this.speechbubble.addRandomIcecream();
             }
+        }
+        getSpeechbubble() {
+            return this.speechbubble;
         }
         drawMouth() {
             //console.log("uff")
@@ -5708,44 +5714,52 @@ var Geistdiele;
             super(_position);
             this.size = _size;
         }
-        addIceBall(_flavour) {
+        //if ice in speechbubble size= 0.4
+        //if not size = 1
+        //const smallSize: number= 0.5
+        //const bigSize:number = 1
+        // public getSpeechbubble() { //geht auch nicht1
+        //   return this.speechbubble;
+        // }
+        // if(this.speechbubble){
+        //   this.position=500,400
+        // }
+        addIceBall(_flavour, _size) {
             if (this.iceBalls.length < 3) {
                 if (this.iceBalls.length === 0) {
-                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 8, y: this.position.y - 25 }, 1));
+                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 8 * _size, y: this.position.y - 25 * _size }, _size));
                 }
                 else if (this.iceBalls.length === 1) {
-                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 70, y: this.position.y - 25 }, 1));
+                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 70 * _size, y: this.position.y - 25 * _size }, _size));
                 }
                 else if (this.iceBalls.length === 2) {
-                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 45, y: this.position.y - 70 }, 1));
+                    this.iceBalls.push(new Geistdiele.IceBall(_flavour, { x: this.position.x + 45 * _size, y: this.position.y - 70 * _size }, _size));
                 }
             }
         }
-        addSauce(_sauces) {
+        addSauce(_sauces, _size) {
             if (this.sauces.length === 0) {
                 if (this.iceBalls.length >= 1) {
-                    //123 sind komisch müsste 012 sein geht aber nicht
-                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 2, y: this.position.y - 28 }, 1));
+                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 2 * _size, y: this.position.y - 28 * _size }, _size));
                 }
                 if (this.iceBalls.length >= 2) {
-                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 65, y: this.position.y - 28 }, 1));
+                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 65 * _size, y: this.position.y - 28 * _size }, _size));
                 }
                 if (this.iceBalls.length === 3) {
-                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 40, y: this.position.y - 75 }, 1));
+                    this.sauces.push(new Geistdiele.Sauce(_sauces, { x: this.position.x + 40 * _size, y: this.position.y - 75 * _size }, _size));
                 }
             }
         }
-        addTopping(_toppings) {
+        addTopping(_toppings, _size) {
             if (this.sprinkles.length === 0) {
                 if (this.iceBalls.length >= 1) {
-                    //123 sind komisch müsste 012 sein geht aber nicht
-                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 2, y: this.position.y - 28 }, 1));
+                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 2 * _size, y: this.position.y - 28 * _size }, _size));
                 }
                 if (this.iceBalls.length >= 2) {
-                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 65, y: this.position.y - 28 }, 1));
+                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 65 * _size, y: this.position.y - 28 * _size }, _size));
                 }
                 if (this.iceBalls.length === 3) {
-                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 40, y: this.position.y - 75 }, 1));
+                    this.sprinkles.push(new Geistdiele.Sprinkles(_toppings, { x: this.position.x + 40 * _size, y: this.position.y - 75 * _size }, _size));
                 }
             }
         }
@@ -5771,13 +5785,18 @@ var Geistdiele;
             this.sprinkles[2]?.draw();
         }
         equals(_iceCream) {
-            if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {
+            if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) { //? weil es sind ja nicht immer alle da
                 return false;
             }
             if (_iceCream.getSprinkles()?.getName() !== this.getSprinkles()?.getName()) {
                 return false;
             }
-            // TODO
+            const iceBalls = _iceCream.getIceBalls();
+            for (let i = 0; i < iceBalls.length; i++) {
+                if (iceBalls[i]?.getName() !== this.iceBalls[i]?.getName()) {
+                    return false;
+                }
+            }
             return true;
         }
         drawCone() {
@@ -6143,45 +6162,49 @@ var Geistdiele;
             }
             if (ghost.interact(hit)) {
                 //check if made icecream is same as wanted
-                seat.removeGhost();
-                console.log("HIT");
+                const tempIce = ghost.getSpeechbubble().getContent();
+                if (tempIce.equals(ice)) {
+                    seat.removeGhost();
+                    ice = new Geistdiele.IceCream({ x: 870, y: 880 }, 1);
+                    ui.increaseCounter();
+                }
                 return;
             }
         }
         if (icetray[0].interact(hit)) {
             //new ball
-            ice.addIceBall(Geistdiele.flavours[0]);
+            ice.addIceBall(Geistdiele.flavours[0], 1);
             console.log("left");
         }
         if (icetray[1].interact(hit)) {
             //new ball
             console.log("middle");
-            ice.addIceBall(Geistdiele.flavours[1]);
+            ice.addIceBall(Geistdiele.flavours[1], 1);
         }
         if (icetray[2].interact(hit)) {
             //new ball
-            ice.addIceBall(Geistdiele.flavours[2]);
+            ice.addIceBall(Geistdiele.flavours[2], 1);
             console.log("right");
         }
         if (sauceInBottle[0].interact(hit)) {
             //new sauce
-            ice.addSauce(Geistdiele.sauces[0]);
+            ice.addSauce(Geistdiele.sauces[0], 1);
             console.log("drizzle");
         }
         if (sauceInBottle[1].interact(hit)) {
             //new sauce
-            ice.addSauce(Geistdiele.sauces[1]);
+            ice.addSauce(Geistdiele.sauces[1], 1);
             console.log("drizzle");
         }
         if (toppingInGlass[0].interact(hit)) {
             //new topping
-            ice.addTopping(Geistdiele.toppings[0]);
+            ice.addTopping(Geistdiele.toppings[0], 1);
             console.log("sprinkles");
         }
         if (toppingInGlass[1].interact(hit)) {
             //warum geht die nicht?
             //new topping
-            ice.addTopping(Geistdiele.toppings[1]);
+            ice.addTopping(Geistdiele.toppings[1], 1);
             console.log("sprinkles");
         }
         if (ui.interact(hit)) {
@@ -6263,6 +6286,7 @@ var Geistdiele;
         drawSauce() {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
+            Geistdiele.crc2.scale(this.size, this.size);
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = this.data.colour;
@@ -6500,10 +6524,9 @@ var Geistdiele;
 (function (Geistdiele) {
     class Speechbubble extends Geistdiele.Drawable {
         content;
-        mirror;
-        constructor(_position, _mirror) {
+        SCALE = 0.4; //groß weil Konstante
+        constructor(_position) {
             super(_position);
-            this.mirror = _mirror;
         }
         draw() {
             this.drawSpeechbubble();
@@ -6514,11 +6537,23 @@ var Geistdiele;
         }
         //draw random icecream
         addRandomIcecream() {
-            const ice = new Geistdiele.IceCream({ x: this.position.x + 45, y: this.position.y + 40 }, 0.4);
-            // TODO add random balls, sauces, toppings
-            const randomFlavour = Math.floor(Math.random() * Geistdiele.flavours.length);
-            ice.addIceBall(Geistdiele.flavours[randomFlavour]);
+            const ice = new Geistdiele.IceCream({ x: this.position.x + 45, y: this.position.y + 45 }, this.SCALE);
+            // const randomFlavour = Math.floor(Math.random() * flavours.length);
+            const randomSauce = Math.floor(Math.random() * Geistdiele.sauces.length);
+            const randomTopping = Math.floor(Math.random() * Geistdiele.toppings.length);
+            ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE); //position ändert nix
+            if (Math.random() < 0.7) {
+                ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE);
+                if (Math.random() < 0.3) {
+                    ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE);
+                }
+            }
+            ice.addSauce(Geistdiele.sauces[randomSauce], this.SCALE);
+            ice.addTopping(Geistdiele.toppings[randomTopping], this.SCALE);
             this.content = ice;
+        }
+        getContent() {
+            return this.content;
         }
         drawSpeechbubble() {
             Geistdiele.crc2.save();
@@ -6562,6 +6597,7 @@ var Geistdiele;
         drawSprinkles() {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
+            Geistdiele.crc2.scale(this.size, this.size);
             // #Ebene-20
             Geistdiele.crc2.save();
             // #path1

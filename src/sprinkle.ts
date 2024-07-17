@@ -11,6 +11,7 @@ namespace Geistdiele {
     private drawSprinkles() {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
+      crc2.scale(this.size, this.size);
 
       // #Ebene-20
       crc2.save();

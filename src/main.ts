@@ -6,17 +6,17 @@ namespace Geistdiele {
   const door: Door = new Door({ x: 137, y: 270 }, false);
   let ghostsBehindWall: Ghost[] = [];
   const icetray = [
-    new Icetray(flavours[0], "left", { x: 0, y: 0 },1),
-    new Icetray(flavours[1], "middle", { x: 0, y: 0 },1),
-    new Icetray(flavours[2], "right", { x: 0, y: 0 },1),
+    new Icetray(flavours[0], "left", { x: 0, y: 0 }, 1),
+    new Icetray(flavours[1], "middle", { x: 0, y: 0 }, 1),
+    new Icetray(flavours[2], "right", { x: 0, y: 0 }, 1),
   ];
   const sauceInBottle = [
-    new SauceInBottle(sauces[0], "left", { x: 0, y: 0 },1),
-    new SauceInBottle(sauces[1], "right", { x: 0, y: 0 },1),
+    new SauceInBottle(sauces[0], "left", { x: 0, y: 0 }, 1),
+    new SauceInBottle(sauces[1], "right", { x: 0, y: 0 }, 1),
   ];
   const toppingInGlass = [
-    new Topping(toppings[0], "left", { x: 0, y: 0 },1),
-    new Topping(toppings[1], "right", { x: 0, y: 0 },1),
+    new Topping(toppings[0], "left", { x: 0, y: 0 }, 1),
+    new Topping(toppings[1], "right", { x: 0, y: 0 }, 1),
   ];
   let ice = new IceCream({ x: 870, y: 880 }, 1);
   const ui = new UI({ x: 0, y: 0 });
@@ -44,48 +44,52 @@ namespace Geistdiele {
       }
       if (ghost.interact(hit)) {
         //check if made icecream is same as wanted
-        seat.removeGhost();
-        console.log("HIT");
+        const tempIce: IceCream = ghost.getSpeechbubble().getContent() as IceCream;
+        if (tempIce.equals(ice)) {
+          seat.removeGhost();
+          ice = new IceCream({ x: 870, y: 880 }, 1);
+          ui.increaseCounter();
+        }
         return;
       }
     }
 
     if (icetray[0].interact(hit)) {
       //new ball
-      ice.addIceBall(flavours[0]);
+      ice.addIceBall(flavours[0], 1);
       console.log("left");
     }
     if (icetray[1].interact(hit)) {
       //new ball
       console.log("middle");
-      ice.addIceBall(flavours[1]);
+      ice.addIceBall(flavours[1], 1);
     }
     if (icetray[2].interact(hit)) {
       //new ball
-      ice.addIceBall(flavours[2]);
+      ice.addIceBall(flavours[2], 1);
       console.log("right");
     }
 
     if (sauceInBottle[0].interact(hit)) {
       //new sauce
-      ice.addSauce(sauces[0]);
+      ice.addSauce(sauces[0], 1);
       console.log("drizzle");
     }
     if (sauceInBottle[1].interact(hit)) {
       //new sauce
-      ice.addSauce(sauces[1]);
+      ice.addSauce(sauces[1], 1);
       console.log("drizzle");
     }
 
     if (toppingInGlass[0].interact(hit)) {
       //new topping
-      ice.addTopping(toppings[0]);
+      ice.addTopping(toppings[0], 1);
       console.log("sprinkles");
     }
     if (toppingInGlass[1].interact(hit)) {
       //warum geht die nicht?
       //new topping
-      ice.addTopping(toppings[1]);
+      ice.addTopping(toppings[1], 1);
       console.log("sprinkles");
     }
 

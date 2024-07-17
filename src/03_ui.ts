@@ -8,7 +8,7 @@ namespace Geistdiele {
 
     public draw(): void {
       this.drawCashCounter();
-      this.drawText()
+      this.drawText();
       this.drawWorkspace();
       this.drawToppingGlasses();
       this.drawBottles();
@@ -21,6 +21,11 @@ namespace Geistdiele {
         return true;
       }
       return false;
+    }
+
+    public increaseCounter() {
+      //if ghost leave
+      this.cashCount++;
     }
 
     private drawWorkspace(): void {
@@ -44,12 +49,12 @@ namespace Geistdiele {
     }
 
     private drawText() {
-      crc2.save()
-      crc2.fillStyle="rgb(158, 125, 72)"
-      crc2.font ="50px Times new Roman"
-      crc2.fillText("moneyyyyyy",1570, 90)
+      crc2.save();
+      crc2.fillStyle = "rgb(158, 125, 72)";
+      crc2.font = "50px Times new Roman";
+      crc2.fillText(this.cashCount.toString(), 1570, 90);
 
-      crc2.restore()
+      crc2.restore();
     }
     private drawCashCounter(): void {
       crc2.save();

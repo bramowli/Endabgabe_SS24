@@ -1,11 +1,10 @@
 namespace Geistdiele {
   export class Speechbubble extends Drawable {
     private content: Drawable;
-    private mirror: boolean;
+    private SCALE = 0.4; //groß weil Konstante
 
-    constructor(_position: Vector, _mirror: boolean) {
+    constructor(_position: Vector) {
       super(_position);
-      this.mirror = _mirror;
     }
 
     public draw(): void {
@@ -18,11 +17,26 @@ namespace Geistdiele {
 
     //draw random icecream
     public addRandomIcecream() {
-      const ice = new IceCream({ x: this.position.x + 45, y: this.position.y + 40 }, 0.4);
-      // TODO add random balls, sauces, toppings
-      const randomFlavour = Math.floor(Math.random() * flavours.length);
-      ice.addIceBall(flavours[randomFlavour]);
+      const ice = new IceCream({ x: this.position.x + 45, y: this.position.y + 45 }, this.SCALE);
+      // const randomFlavour = Math.floor(Math.random() * flavours.length);
+      const randomSauce = Math.floor(Math.random() * sauces.length);
+      const randomTopping = Math.floor(Math.random() * toppings.length);
+
+      ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE); //position ändert nix
+      if (Math.random() < 0.7) {
+        ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE);
+        if (Math.random() < 0.3) {
+          ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE);
+        }
+      }
+
+      ice.addSauce(sauces[randomSauce], this.SCALE);
+      ice.addTopping(toppings[randomTopping], this.SCALE);
       this.content = ice;
+    }
+
+    public getContent() {
+      return this.content;
     }
 
     private drawSpeechbubble() {

@@ -22,7 +22,7 @@ namespace Geistdiele {
   export const toppings: IngredientType[] = [
     {
       name: "Cicadalegs",
-      colour: "rgb(227, 150, 98)",
+      colour: "rgb(183, 107, 56)",
       lineColour: "green",
       price: 5,
     },
