@@ -1,9 +1,11 @@
 namespace Geistdiele {
+  // possible positions of the icetray
   type IcetrayPositionType = "left" | "middle" | "right";
-  export class Icetray extends Ingredient implements Interactable {
+
+  export class Icetray extends Ingredient {
     private icetrayPosition: IcetrayPositionType;
 
-    constructor(_data: IngredientType, _icetrayPosition: IcetrayPositionType, _position: Vector, _size:number) {
+    constructor(_data: IngredientType, _icetrayPosition: IcetrayPositionType, _position: Vector, _size: number) {
       super(_data, _position, _size);
       this.icetrayPosition = _icetrayPosition;
     }
@@ -19,8 +21,6 @@ namespace Geistdiele {
     }
 
     public interact(_hitPosition: Vector): boolean {
-      console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-      //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
       if (
         this.icetrayPosition === "left" &&
         _hitPosition.x >= 120 &&
@@ -28,7 +28,7 @@ namespace Geistdiele {
         _hitPosition.y >= 800 &&
         _hitPosition.y <= 1050
       ) {
-        console.log("hit blue");
+        // hit blue
         return true;
       } else if (
         this.icetrayPosition === "middle" &&
@@ -37,7 +37,7 @@ namespace Geistdiele {
         _hitPosition.y >= 800 &&
         _hitPosition.y <= 1050
       ) {
-        console.log("hit purple");
+        // hit purple
         return true;
       } else if (
         this.icetrayPosition === "right" &&
@@ -46,7 +46,7 @@ namespace Geistdiele {
         _hitPosition.y >= 800 &&
         _hitPosition.y <= 1050
       ) {
-        console.log("hit orange");
+        // hit orange
         return true;
       }
       return false;
@@ -55,7 +55,7 @@ namespace Geistdiele {
     private drawLeftIce() {
       crc2.save();
 
-      // #Ebene-15
+      // #Layer-15
 
       // #path1
       crc2.beginPath();
@@ -119,7 +119,7 @@ namespace Geistdiele {
     }
 
     private drawMiddleIce() {
-      // #Ebene-16
+      // #Layer-16
 
       // #path5
       crc2.beginPath();
@@ -184,7 +184,7 @@ namespace Geistdiele {
     }
 
     private drawRightIce() {
-      // #Ebene-17
+      // #Layer-17
 
       // #path9
       crc2.beginPath();

@@ -1,6 +1,7 @@
 "use strict";
 var Geistdiele;
 (function (Geistdiele) {
+    // represents 2D coordinates
     class Vector {
         x;
         y;
@@ -13,6 +14,7 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
+    // abstract class for all drawable objects
     class Drawable {
         position;
         constructor(_position) {
@@ -27,6 +29,7 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
+    // abstract class for all ingredients
     class Ingredient extends Geistdiele.Drawable {
         data;
         size;
@@ -35,6 +38,7 @@ var Geistdiele;
             this.data = _data;
             this.size = _size;
         }
+        // returns the name defined in the data object
         getName() {
             return this.data.name;
         }
@@ -63,7 +67,7 @@ var Geistdiele;
                 _hitPosition.x <= 1800 &&
                 _hitPosition.y >= 890 &&
                 _hitPosition.y <= 1050) {
-                console.log("hit red");
+                // hit red
                 return true;
             }
             else if (this.saucePosition === "right" &&
@@ -71,7 +75,7 @@ var Geistdiele;
                 _hitPosition.x <= 1895 &&
                 _hitPosition.y >= 840 &&
                 _hitPosition.y <= 1000) {
-                console.log("hit green");
+                // hit green
                 return true;
             }
             return false;
@@ -173,14 +177,12 @@ var Geistdiele;
             }
         }
         interact(_hitPosition) {
-            console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-            //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
             if (this.toppingPosition === "left" &&
                 _hitPosition.x >= 1275 &&
                 _hitPosition.x <= 1430 &&
                 _hitPosition.y >= 800 &&
                 _hitPosition.y <= 1035) {
-                console.log("hit cicada");
+                // hit cicada
                 return true;
             }
             else if (this.toppingPosition === "right" &&
@@ -188,7 +190,7 @@ var Geistdiele;
                 _hitPosition.x <= 1670 &&
                 _hitPosition.y >= 870 &&
                 _hitPosition.y <= 1035) {
-                console.log("hit spider");
+                // hit spider
                 return true;
             }
             return false;
@@ -196,7 +198,7 @@ var Geistdiele;
         drawLeftTopping() {
             Geistdiele.crc2.save();
             Geistdiele.crc2.transform(1.0, 0.0, 0.0, 1.0, -0.942039, -4.53197);
-            // #Ebene-19
+            // #Layer-19
             // #path1-2
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(227, 150, 98)";
@@ -494,7 +496,7 @@ var Geistdiele;
             Geistdiele.crc2.stroke();
         }
         drawRightTopping() {
-            // #Ebene-1
+            // #Layer-1
             // #path25
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(94, 94, 94)";
@@ -883,13 +885,12 @@ var Geistdiele;
         }
         interact(_hitPosition) {
             if (_hitPosition.x >= 760 && _hitPosition.x <= 795 && _hitPosition.y >= 995 && _hitPosition.y <= 1030) {
-                console.log("hit");
                 return true;
             }
             return false;
         }
         increaseCounter() {
-            //if ghost leave
+            // if ghost has been served
             this.cashCount++;
         }
         drawWorkspace() {
@@ -918,7 +919,7 @@ var Geistdiele;
         }
         drawCashCounter() {
             Geistdiele.crc2.save();
-            // #Ebene-21
+            // #Layer-21
             Geistdiele.crc2.save();
             // #path1-3
             Geistdiele.crc2.beginPath();
@@ -1022,7 +1023,7 @@ var Geistdiele;
         drawSnail() {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(1750, 10);
-            // #Ebene-13
+            // #Layer-13
             // #path1-6
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(189, 150, 88)";
@@ -1051,7 +1052,7 @@ var Geistdiele;
         }
         drawBottles() {
             Geistdiele.crc2.save();
-            // #Ebene-22
+            // #Layer-22
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(189, 150, 88)";
@@ -1200,7 +1201,7 @@ var Geistdiele;
         drawLantern(_x, _y) {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(_x, _y);
-            // #Ebene-7
+            // #Layer-7
             // #path4-2
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(173, 132, 57)";
@@ -1413,7 +1414,7 @@ var Geistdiele;
             Geistdiele.crc2.restore();
         }
         drawStoneStuff(_position) {
-            // #Ebene-1
+            // #Layer-1
             Geistdiele.crc2.save();
             // #path1
             Geistdiele.crc2.beginPath();
@@ -2382,7 +2383,7 @@ var Geistdiele;
             Geistdiele.crc2.closePath();
             Geistdiele.crc2.fill();
             Geistdiele.crc2.restore();
-            // #Ebene-3
+            // #Layer-3
             Geistdiele.crc2.save();
             // #path70
             Geistdiele.crc2.beginPath();
@@ -4787,7 +4788,7 @@ var Geistdiele;
             Geistdiele.crc2.fill();
             Geistdiele.crc2.stroke();
             Geistdiele.crc2.restore();
-            // #Ebene-2
+            // #Layer-2
             Geistdiele.crc2.save();
             // #path212
             Geistdiele.crc2.beginPath();
@@ -4857,7 +4858,7 @@ var Geistdiele;
             Geistdiele.crc2.moveTo(139.402, 119.204);
             Geistdiele.crc2.bezierCurveTo(148.919, 119.204, 160.064, 118.897, 160.064, 118.897);
             Geistdiele.crc2.stroke();
-            // #Ebene-5-kopieren
+            // #Layer-5-kopieren
             // #path5
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
@@ -4897,7 +4898,7 @@ var Geistdiele;
             Geistdiele.crc2.moveTo(297.676, 52.7385);
             Geistdiele.crc2.lineTo(297.676, 47.8088);
             Geistdiele.crc2.stroke();
-            // #Ebene-5
+            // #Layer-5
             // #path8
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(32, 32, 32)";
@@ -4915,7 +4916,7 @@ var Geistdiele;
             Geistdiele.crc2.closePath();
             Geistdiele.crc2.fill();
             Geistdiele.crc2.stroke();
-            // #Ebene-7
+            // #Layer-7
             // #path9
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(184, 93, 29)";
@@ -5018,7 +5019,7 @@ var Geistdiele;
             Geistdiele.crc2.closePath();
             Geistdiele.crc2.fill();
             Geistdiele.crc2.stroke();
-            // #Ebene-8
+            // #Layer-8
             // #path15
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(52, 74, 0)";
@@ -5039,7 +5040,7 @@ var Geistdiele;
         }
         drawCounterBackground() {
             Geistdiele.crc2.save();
-            // #Ebene-14
+            // #Layer-14
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(122, 122, 122)";
@@ -5111,17 +5112,7 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
-    class Check extends Geistdiele.Drawable {
-        constructor(_position) {
-            super(_position);
-        }
-        draw() {
-        }
-    }
-    Geistdiele.Check = Check;
-})(Geistdiele || (Geistdiele = {}));
-var Geistdiele;
-(function (Geistdiele) {
+    // must be 3 different flavours
     Geistdiele.flavours = [
         {
             name: "Souls of the Innocent",
@@ -5142,6 +5133,7 @@ var Geistdiele;
             price: 20,
         },
     ];
+    // must be 2 different toppings
     Geistdiele.toppings = [
         {
             name: "Cicadalegs",
@@ -5156,6 +5148,7 @@ var Geistdiele;
             price: 10,
         },
     ];
+    // must be 2 different sauces
     Geistdiele.sauces = [
         {
             name: "blood",
@@ -5199,7 +5192,7 @@ var Geistdiele;
         drawOpenDoor(_position) {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x - 90, this.position.y);
-            // #Ebene-10-0
+            // #Layer-10-0
             Geistdiele.crc2.save();
             // #path1-8
             Geistdiele.crc2.beginPath();
@@ -5353,7 +5346,7 @@ var Geistdiele;
         drawClosedDoor(_position) {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
-            // #Ebene-10
+            // #Layer-10
             Geistdiele.crc2.save();
             // #path1
             Geistdiele.crc2.beginPath();
@@ -5519,49 +5512,46 @@ var Geistdiele;
             this.emotion = _emotion;
             this.timer = 0;
             this.activateSpeechbubble = _activateSpeechbubble;
+            // internal timer to change the emotion and add a speechbubble
             setInterval(this.updateTimer.bind(this), 1000);
         }
         draw() {
-            //console.log(`Drawing ghost at position: (${this.position.x}, ${this.position.y})`);
             this.drawGhost();
             this.drawMouth();
             if (this.speechbubble) {
                 this.speechbubble.draw();
             }
         }
+        // move ghost relative to own position by x and y
         move(_x, _y) {
-            //zum Aufrücken
             this.position.x += _x;
             this.position.y += _y;
         }
         interact(_hitPosition) {
-            //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-            //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
             if (_hitPosition.x >= this.position.x &&
                 _hitPosition.x <= this.position.x + 100 &&
                 _hitPosition.y >= this.position.y &&
                 _hitPosition.y <= this.position.y + 200) {
-                console.log("hit");
                 return true;
             }
             return false;
         }
         updateTimer() {
-            //kann ich den auch aus der main benutzen?
             this.timer++;
             if (this.timer === 3) {
-                console.log("10 seconds have passed!");
+                // add Speechbubble after 3 seconds
                 this.addSpeechbubble();
             }
             if (this.timer === 40) {
-                console.log("20 seconds have passed!");
+                // ghost becomes neutral after 40 seconds
                 this.emotion = "neutral";
             }
             if (this.timer === 70) {
-                console.log("20 seconds have passed!");
+                // ghost becomes unhappy after 70 seconds
                 this.emotion = "unhappy";
             }
         }
+        // add a speechbubble with a random icecream
         addSpeechbubble() {
             if (this.activateSpeechbubble === true) {
                 const pos = new Geistdiele.Vector(this.position.x + 95, this.position.y - 80);
@@ -5573,7 +5563,6 @@ var Geistdiele;
             return this.speechbubble;
         }
         drawMouth() {
-            //console.log("uff")
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x + 32, this.position.y + 90);
             Geistdiele.crc2.strokeStyle = "black";
@@ -5590,16 +5579,13 @@ var Geistdiele;
                 Geistdiele.crc2.beginPath();
                 Geistdiele.crc2.moveTo(0, 0);
                 Geistdiele.crc2.bezierCurveTo(0, -10, 35, -10, 35, 0);
-                // crc2.moveTo(0,0)
             }
             Geistdiele.crc2.closePath();
             Geistdiele.crc2.stroke();
             Geistdiele.crc2.restore();
         }
         drawGhost() {
-            //?
             Geistdiele.crc2.save();
-            /*this.position.x, this.position.y * Math.random()*0.05*/
             Geistdiele.crc2.translate(this.position.x, this.position.y);
             // #path1
             Geistdiele.crc2.beginPath();
@@ -5624,7 +5610,7 @@ var Geistdiele;
             Geistdiele.crc2.closePath();
             Geistdiele.crc2.fill();
             Geistdiele.crc2.stroke();
-            // #Ebene-3
+            // #Layer-3
             // #path2
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(0, 0, 0)";
@@ -5677,7 +5663,7 @@ var Geistdiele;
             return false;
         }
         drawBall() {
-            // #Ebene-9
+            // #Layer-9
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
             Geistdiele.crc2.scale(this.size, this.size);
@@ -5785,7 +5771,8 @@ var Geistdiele;
             this.sprinkles[2]?.draw();
         }
         equals(_iceCream) {
-            if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) { //? weil es sind ja nicht immer alle da
+            if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {
+                //? weil es sind ja nicht immer alle da
                 return false;
             }
             if (_iceCream.getSprinkles()?.getName() !== this.getSprinkles()?.getName()) {
@@ -5803,7 +5790,7 @@ var Geistdiele;
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
             Geistdiele.crc2.scale(this.size, this.size);
-            // #Ebene-8
+            // #Layer-8
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(208, 172, 107)";
@@ -5903,14 +5890,12 @@ var Geistdiele;
             }
         }
         interact(_hitPosition) {
-            console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-            //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
             if (this.icetrayPosition === "left" &&
                 _hitPosition.x >= 120 &&
                 _hitPosition.x <= 280 &&
                 _hitPosition.y >= 800 &&
                 _hitPosition.y <= 1050) {
-                console.log("hit blue");
+                // hit blue
                 return true;
             }
             else if (this.icetrayPosition === "middle" &&
@@ -5918,7 +5903,7 @@ var Geistdiele;
                 _hitPosition.x <= 490 &&
                 _hitPosition.y >= 800 &&
                 _hitPosition.y <= 1050) {
-                console.log("hit purple");
+                // hit purple
                 return true;
             }
             else if (this.icetrayPosition === "right" &&
@@ -5926,14 +5911,14 @@ var Geistdiele;
                 _hitPosition.x <= 695 &&
                 _hitPosition.y >= 800 &&
                 _hitPosition.y <= 1050) {
-                console.log("hit orange");
+                // hit orange
                 return true;
             }
             return false;
         }
         drawLeftIce() {
             Geistdiele.crc2.save();
-            // #Ebene-15
+            // #Layer-15
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(80, 213, 238)";
@@ -5992,7 +5977,7 @@ var Geistdiele;
             Geistdiele.crc2.stroke();
         }
         drawMiddleIce() {
-            // #Ebene-16
+            // #Layer-16
             // #path5
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = this.data.colour;
@@ -6052,7 +6037,7 @@ var Geistdiele;
             Geistdiele.crc2.stroke();
         }
         drawRightIce() {
-            // #Ebene-17
+            // #Layer-17
             // #path9
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(255, 126, 39)";
@@ -6124,7 +6109,7 @@ var Geistdiele;
 (function (Geistdiele) {
     Geistdiele.canvas = document.querySelector("canvas");
     Geistdiele.crc2 = Geistdiele.canvas.getContext("2d");
-    const bg = new Geistdiele.Background(new Geistdiele.Vector(0, 0));
+    const background = new Geistdiele.Background(new Geistdiele.Vector(0, 0));
     let seats = [];
     const door = new Geistdiele.Door({ x: 137, y: 270 }, false);
     let ghostsBehindWall = [];
@@ -6144,69 +6129,58 @@ var Geistdiele;
     let ice = new Geistdiele.IceCream({ x: 870, y: 880 }, 1);
     const ui = new Geistdiele.UI({ x: 0, y: 0 });
     window.addEventListener("load", handleLoad);
+    //  gets called once when the window is loaded
     function handleLoad() {
         Geistdiele.canvas.addEventListener("click", handleClick);
-        new Audio("./assets/music.mp3").play();
+        new Audio("./assets/music.mp3").play(); //background music
         addSeats();
         setInterval(loop, 250);
     }
+    // gets called when the canvas is clicked
     function handleClick(_event) {
         let hit = {
-            x: (_event.offsetX * Geistdiele.canvas.width) / Geistdiele.canvas.clientWidth, //weil canvas scale anders
+            x: (_event.offsetX * Geistdiele.canvas.width) / Geistdiele.canvas.clientWidth, // scale mouse coordinates to canvas coordinates
             y: (_event.offsetY * Geistdiele.canvas.height) / Geistdiele.canvas.clientHeight,
         };
         for (const seat of seats) {
             const ghost = seat.getGhost();
-            if (!ghost) {
-                continue;
-            }
-            if (ghost.interact(hit)) {
-                //check if made icecream is same as wanted
-                const tempIce = ghost.getSpeechbubble().getContent();
+            if (ghost?.interact(hit)) {
+                // check if made icecream is same as wanted
+                const tempIce = ghost.getSpeechbubble().getContent(); // content of speechbubble is Drawable so I have to convert it to IceCream
                 if (tempIce.equals(ice)) {
                     seat.removeGhost();
-                    ice = new Geistdiele.IceCream({ x: 870, y: 880 }, 1);
+                    ice = new Geistdiele.IceCream({ x: 870, y: 880 }, 1); // start with empty IceCream again
                     ui.increaseCounter();
                 }
+                // end function after first successful hit
                 return;
             }
         }
+        // check if hit on icetray
         if (icetray[0].interact(hit)) {
-            //new ball
             ice.addIceBall(Geistdiele.flavours[0], 1);
-            console.log("left");
         }
         if (icetray[1].interact(hit)) {
-            //new ball
-            console.log("middle");
             ice.addIceBall(Geistdiele.flavours[1], 1);
         }
         if (icetray[2].interact(hit)) {
-            //new ball
             ice.addIceBall(Geistdiele.flavours[2], 1);
-            console.log("right");
         }
+        // check if hit on sauceInBottle
         if (sauceInBottle[0].interact(hit)) {
-            //new sauce
             ice.addSauce(Geistdiele.sauces[0], 1);
-            console.log("drizzle");
         }
         if (sauceInBottle[1].interact(hit)) {
-            //new sauce
             ice.addSauce(Geistdiele.sauces[1], 1);
-            console.log("drizzle");
         }
+        // check if hit on toppingInGlass
         if (toppingInGlass[0].interact(hit)) {
-            //new topping
             ice.addTopping(Geistdiele.toppings[0], 1);
-            console.log("sprinkles");
         }
         if (toppingInGlass[1].interact(hit)) {
-            //warum geht die nicht?
-            //new topping
             ice.addTopping(Geistdiele.toppings[1], 1);
-            console.log("sprinkles");
         }
+        // check if hit on ui
         if (ui.interact(hit)) {
             ice = new Geistdiele.IceCream({ x: 870, y: 880 }, 1);
         }
@@ -6219,16 +6193,19 @@ var Geistdiele;
         seats.push(new Geistdiele.Seat({ x: 1400, y: 450 }, false, 1));
         seats.push(new Geistdiele.Seat({ x: 1700, y: 450 }, true, 1));
     }
+    // add new ghosts to the waiting line if there is space
     function addWaitingGhosts(_x) {
-        //immer neue geister kommen und anstehen lassen
         if (_x < Geistdiele.canvas.width - 500) {
             ghostsBehindWall.push(new Geistdiele.Ghost({ x: _x, y: 200 }, "happy", false));
         }
     }
+    // main loop of the game that gets called in intervals
     function loop() {
         animate();
+        // check if there is a free seat
         const freeSeat = seats.find((Seat) => Seat.isFree());
         if (freeSeat) {
+            // open door and let ghosts in
             door.open();
             if (ghostsBehindWall.shift()) {
                 ghostsBehindWall.forEach((g) => {
@@ -6240,24 +6217,23 @@ var Geistdiele;
         else {
             door.close();
         }
+        // add new ghosts to the waiting line with a small chance
         if (Math.random() > 0.9) {
             const x = 200 * (ghostsBehindWall.length + 1);
             addWaitingGhosts(x);
         }
     }
+    // draw all elements on the canvas
     function animate() {
         drawSky();
         for (let i = 0; i < ghostsBehindWall.length; i++) {
             ghostsBehindWall[i].draw();
         }
-        bg.draw();
+        background.draw();
         door.draw();
         for (let i = 0; i < seats.length; i++) {
             seats[i].draw();
         }
-        // ice.addTopping(toppings[0]);
-        // ice.addIceBall(flavours[0]); //warum vor den anderen?
-        // ice.addSauce(sauces[0]);
         ice.draw();
         icetray[0].draw();
         icetray[1].draw();
@@ -6339,13 +6315,14 @@ var Geistdiele;
         }
         draw() {
             this.drawSeat();
+            // if there is a ghost, draw it
             if (this.ghost) {
-                //falls noch nicht existiert
                 this.ghost.draw();
             }
         }
+        // returns true if the seat is free
         isFree() {
-            return this.ghost === undefined;
+            return this.ghost === undefined || this.ghost === null;
         }
         getGhost() {
             return this.ghost;
@@ -6522,20 +6499,21 @@ var Geistdiele;
 })(Geistdiele || (Geistdiele = {}));
 var Geistdiele;
 (function (Geistdiele) {
+    // speechbubble of a ghost
     class Speechbubble extends Geistdiele.Drawable {
         content;
-        SCALE = 0.4; //groß weil Konstante
+        SCALE = 0.4; // capitalized because it's a constant
         constructor(_position) {
             super(_position);
         }
         draw() {
             this.drawSpeechbubble();
+            // if there is content, draw it
             if (this.content) {
-                //was wird da abgefragt?
                 this.content.draw();
             }
         }
-        //draw random icecream
+        // generate and add a random icecream
         addRandomIcecream() {
             const ice = new Geistdiele.IceCream({ x: this.position.x + 45, y: this.position.y + 45 }, this.SCALE);
             // const randomFlavour = Math.floor(Math.random() * flavours.length);
@@ -6558,7 +6536,7 @@ var Geistdiele;
         drawSpeechbubble() {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
-            // #Ebene-11
+            // #Layer-11
             // #path1-0
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(255, 255, 255)";
@@ -6598,7 +6576,7 @@ var Geistdiele;
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(this.position.x, this.position.y);
             Geistdiele.crc2.scale(this.size, this.size);
-            // #Ebene-20
+            // #Layer-20
             Geistdiele.crc2.save();
             // #path1
             Geistdiele.crc2.beginPath();

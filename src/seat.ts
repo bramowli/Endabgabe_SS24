@@ -12,14 +12,15 @@ namespace Geistdiele {
 
     public draw(): void {
       this.drawSeat();
+      // if there is a ghost, draw it
       if (this.ghost) {
-        //falls noch nicht existiert
         this.ghost.draw();
       }
     }
 
+    // returns true if the seat is free
     public isFree(): boolean {
-      return this.ghost === undefined;
+      return this.ghost === undefined || this.ghost === null;
     }
 
     public getGhost() {

@@ -1,6 +1,6 @@
 namespace Geistdiele {
   export class Sprinkles extends Ingredient {
-    constructor(_data: IngredientType, _pos: Vector, _size:number) {
+    constructor(_data: IngredientType, _pos: Vector, _size: number) {
       super(_data, _pos, _size);
     }
 
@@ -13,7 +13,7 @@ namespace Geistdiele {
       crc2.translate(this.position.x, this.position.y);
       crc2.scale(this.size, this.size);
 
-      // #Ebene-20
+      // #Layer-20
       crc2.save();
 
       // #path1
@@ -71,7 +71,7 @@ namespace Geistdiele {
       // #path5-7
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
-      crc2.strokeStyle =this.data.colour;
+      crc2.strokeStyle = this.data.colour;
       crc2.lineCap = "butt";
       crc2.lineJoin = "round";
       crc2.lineWidth = 2.2566;

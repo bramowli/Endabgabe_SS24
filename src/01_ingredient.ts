@@ -1,14 +1,8 @@
 namespace Geistdiele {
-  export interface IngredientType {
-    name: string;
-    colour: string;
-    lineColour: string;
-    price: number;
-  }
-
+  // abstract class for all ingredients
   export abstract class Ingredient extends Drawable {
     protected data: IngredientType;
-    size: number;
+    protected size: number;
 
     constructor(_data: IngredientType, _position: Vector, _size: number) {
       super(_position);
@@ -16,6 +10,7 @@ namespace Geistdiele {
       this.size = _size;
     }
 
+    // returns the name defined in the data object
     public getName(): string {
       return this.data.name;
     }
