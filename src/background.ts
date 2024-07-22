@@ -24,7 +24,7 @@ namespace Geistdiele {
       let x: number = -20;
 
       for (let i = 0; i <= 3; i++) {
-        this.drawLight(x, 80); //why so weird?
+        this.drawLight(x, 80);
         this.drawLantern(x, -20);
         x += 600;
       }

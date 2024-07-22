@@ -1184,7 +1184,7 @@ var Geistdiele;
         drawAllLanterns() {
             let x = -20;
             for (let i = 0; i <= 3; i++) {
-                this.drawLight(x, 80); //why so weird?
+                this.drawLight(x, 80);
                 this.drawLantern(x, -20);
                 x += 600;
             }
@@ -1417,7 +1417,7 @@ var Geistdiele;
             Geistdiele.crc2.restore();
         }
         drawStoneStuff(_position) {
-            // #Layer-1
+            // #Ebene-1
             Geistdiele.crc2.save();
             // #path1
             Geistdiele.crc2.beginPath();
@@ -5043,7 +5043,7 @@ var Geistdiele;
         }
         drawCounterBackground() {
             Geistdiele.crc2.save();
-            // #Layer-14
+            // #Ebene-14
             // #path1
             Geistdiele.crc2.beginPath();
             Geistdiele.crc2.fillStyle = "rgb(122, 122, 122)";
