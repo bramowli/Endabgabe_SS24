@@ -8,7 +8,7 @@ namespace Geistdiele {
       this.drawAllLanterns();
       this.drawStoneStuff(this.position);
       this.drawAllTables();
-      this.drawCounterBackground()
+      this.drawCounterBackground();
     }
 
     private drawAllTables() {
@@ -24,21 +24,25 @@ namespace Geistdiele {
       let x: number = -20;
 
       for (let i = 0; i <= 3; i++) {
-        //this.drawLight(x,300)
-        this.drawLantern(x, 50);
+        this.drawLight(x, 80); //why so weird?
+        this.drawLantern(x, -20);
         x += 600;
       }
     }
 
-    // private drawLight(_x: number, _y: number) {
-    //   crc2.save();
-    //   crc2.translate(0, 0);
-    //   let gradient = crc2.createRadialGradient(_x, _y, 70, _x, _y, 130);
-    //   gradient.addColorStop(0, "#f2b35a");
-    //   gradient.addColorStop(1, "#162032");
-    //   crc2.fillStyle = gradient;
-    //   crc2.fill();
-    // }
+    private drawLight(_x: number, _y: number) {
+      crc2.save();
+      let gradient = crc2.createRadialGradient(_x + 95, _y, 40, _x + 95, _y, 120);
+      gradient.addColorStop(0, "#bf8c43");
+      gradient.addColorStop(1, "#162032");
+      crc2.fillStyle = gradient;
+      crc2.beginPath();
+      crc2.arc(_x + 95, _y, 120, 0, Math.PI * 2);
+      crc2.closePath();
+      crc2.fill();
+      crc2.restore();
+    }
+
     private drawLantern(_x: number, _y: number) {
       crc2.save();
       crc2.translate(_x, _y);
@@ -271,7 +275,7 @@ namespace Geistdiele {
       crc2.restore();
     }
 
-    drawStoneStuff(_position: Vector): void {
+    private drawStoneStuff(_position: Vector): void {
       // #Ebene-1
       crc2.save();
 
@@ -4133,7 +4137,7 @@ namespace Geistdiele {
 
     private drawCounterBackground() {
       crc2.save();
-      
+
       // #Ebene-14
 
       // #path1

@@ -1,6 +1,6 @@
 namespace Geistdiele {
   export class UI extends Drawable implements Interactable {
-    cashCount: number = 0;
+    private cashCount: number = 0;
 
     constructor(_position: Vector) {
       super(_position);
@@ -92,7 +92,7 @@ namespace Geistdiele {
       this.drawSnail();
     }
 
-    drawToppingGlasses() {
+    private drawToppingGlasses() {
       crc2.beginPath();
       crc2.globalAlpha = 1.0;
       crc2.strokeStyle = "rgb(221, 221, 221)";
@@ -167,7 +167,7 @@ namespace Geistdiele {
       crc2.stroke();
     }
 
-    drawSnail() {
+    private drawSnail() {
       crc2.save();
       crc2.translate(1750, 10);
 
@@ -200,7 +200,7 @@ namespace Geistdiele {
       crc2.restore();
     }
 
-    drawBottles() {
+    private drawBottles() {
       crc2.save();
 
       // #Ebene-22

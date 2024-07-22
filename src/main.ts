@@ -129,7 +129,7 @@ namespace Geistdiele {
     } else {
       door.close();
     }
-    if (Math.random() > 0.9) {
+    if (Math.random() > 0.96) {
       const x = 200 * (ghostsBehindWall.length + 1);
       addWaitingGhosts(x);
     }

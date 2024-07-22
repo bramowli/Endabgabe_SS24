@@ -3,7 +3,7 @@ namespace Geistdiele {
   export class Topping extends Ingredient {
     private toppingPosition: ToppingPositionType;
 
-    constructor(_data: IngredientType, _icetrayPosition: ToppingPositionType, _position: Vector, _size:number) {
+    constructor(_data: IngredientType, _icetrayPosition: ToppingPositionType, _position: Vector, _size: number) {
       super(_data, _position, _size);
       this.toppingPosition = _icetrayPosition;
     }
@@ -41,7 +41,7 @@ namespace Geistdiele {
       return false;
     }
 
-    drawLeftTopping() {
+    private drawLeftTopping() {
       crc2.save();
       crc2.transform(1.0, 0.0, 0.0, 1.0, -0.942039, -4.53197);
 
@@ -367,7 +367,7 @@ namespace Geistdiele {
       crc2.stroke();
     }
 
-    drawRightTopping() {
+    private drawRightTopping() {
       // #Ebene-1
 
       // #path25

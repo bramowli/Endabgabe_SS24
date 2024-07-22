@@ -48,15 +48,13 @@ namespace Geistdiele {
       //kann ich den auch aus der main benutzen?
       this.timer++;
       if (this.timer === 3) {
-        console.log("10 seconds have passed!");
         this.addSpeechbubble();
       }
       if (this.timer === 40) {
-        console.log("20 seconds have passed!");
+        console.log("40 seconds have passed!");
         this.emotion = "neutral";
       }
-      if (this.timer === 70) {
-        console.log("20 seconds have passed!");
+      if (this.timer === 80) {
         this.emotion = "unhappy";
       }
     }

@@ -1183,20 +1183,23 @@ var Geistdiele;
         drawAllLanterns() {
             let x = -20;
             for (let i = 0; i <= 3; i++) {
-                //this.drawLight(x,300)
-                this.drawLantern(x, 50);
+                this.drawLight(x, 80); //why so weird?
+                this.drawLantern(x, -20);
                 x += 600;
             }
         }
-        // private drawLight(_x: number, _y: number) {
-        //   crc2.save();
-        //   crc2.translate(0, 0);
-        //   let gradient = crc2.createRadialGradient(_x, _y, 70, _x, _y, 130);
-        //   gradient.addColorStop(0, "#f2b35a");
-        //   gradient.addColorStop(1, "#162032");
-        //   crc2.fillStyle = gradient;
-        //   crc2.fill();
-        // }
+        drawLight(_x, _y) {
+            Geistdiele.crc2.save();
+            let gradient = Geistdiele.crc2.createRadialGradient(_x + 95, _y, 40, _x + 95, _y, 120);
+            gradient.addColorStop(0, "#bf8c43");
+            gradient.addColorStop(1, "#162032");
+            Geistdiele.crc2.fillStyle = gradient;
+            Geistdiele.crc2.beginPath();
+            Geistdiele.crc2.arc(_x + 95, _y, 120, 0, Math.PI * 2);
+            Geistdiele.crc2.closePath();
+            Geistdiele.crc2.fill();
+            Geistdiele.crc2.restore();
+        }
         drawLantern(_x, _y) {
             Geistdiele.crc2.save();
             Geistdiele.crc2.translate(_x, _y);
@@ -5550,15 +5553,13 @@ var Geistdiele;
             //kann ich den auch aus der main benutzen?
             this.timer++;
             if (this.timer === 3) {
-                console.log("10 seconds have passed!");
                 this.addSpeechbubble();
             }
             if (this.timer === 40) {
-                console.log("20 seconds have passed!");
+                console.log("40 seconds have passed!");
                 this.emotion = "neutral";
             }
-            if (this.timer === 70) {
-                console.log("20 seconds have passed!");
+            if (this.timer === 80) {
                 this.emotion = "unhappy";
             }
         }
@@ -6240,7 +6241,7 @@ var Geistdiele;
         else {
             door.close();
         }
-        if (Math.random() > 0.9) {
+        if (Math.random() > 0.96) {
             const x = 200 * (ghostsBehindWall.length + 1);
             addWaitingGhosts(x);
         }
