@@ -10,19 +10,6 @@ namespace Geistdiele {
       this.size = _size;
     }
 
-    //if ice in speechbubble size= 0.4
-    //if not size = 1
-    //const smallSize: number= 0.5
-    //const bigSize:number = 1
-
-    // public getSpeechbubble() { //geht auch nicht1
-    //   return this.speechbubble;
-    // }
-
-    // if(this.speechbubble){
-    //   this.position=500,400
-    // }
-
     public addIceBall(_flavour: IngredientType, _size: number): void {
       if (this.iceBalls.length < 3) {
         if (this.iceBalls.length === 0) {
