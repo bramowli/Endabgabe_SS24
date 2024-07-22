@@ -114,6 +114,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
       crc2.scale(this.size, this.size);
+
       // #Layer-8
 
       // #path1
