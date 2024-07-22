@@ -6512,7 +6512,7 @@ var Geistdiele;
             // const randomFlavour = Math.floor(Math.random() * flavours.length);
             const randomSauce = Math.floor(Math.random() * Geistdiele.sauces.length);
             const randomTopping = Math.floor(Math.random() * Geistdiele.toppings.length);
-            ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE); //position ändert nix
+            ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE);
             if (Math.random() < 0.7) {
                 ice.addIceBall(Geistdiele.flavours[Math.floor(Math.random() * Geistdiele.flavours.length)], this.SCALE);
                 if (Math.random() < 0.3) {

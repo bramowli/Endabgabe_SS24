@@ -23,7 +23,7 @@ namespace Geistdiele {
       const randomSauce = Math.floor(Math.random() * sauces.length);
       const randomTopping = Math.floor(Math.random() * toppings.length);
 
-      ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE); //position ändert nix
+      ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE);
       if (Math.random() < 0.7) {
         ice.addIceBall(flavours[Math.floor(Math.random() * flavours.length)], this.SCALE);
         if (Math.random() < 0.3) {
