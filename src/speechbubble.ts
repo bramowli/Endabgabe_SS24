@@ -1,7 +1,8 @@
 namespace Geistdiele {
+  // speechbubble of a ghost
   export class Speechbubble extends Drawable {
     private content: Drawable;
-    private SCALE = 0.4; //groß weil Konstante
+    private SCALE = 0.4; // capitalized because it's a constant
 
     constructor(_position: Vector) {
       super(_position);
@@ -9,13 +10,13 @@ namespace Geistdiele {
 
     public draw(): void {
       this.drawSpeechbubble();
+      // if there is content, draw it
       if (this.content) {
-        //was wird da abgefragt?
         this.content.draw();
       }
     }
 
-    //draw random icecream
+    // generate and add a random icecream
     public addRandomIcecream() {
       const ice = new IceCream({ x: this.position.x + 45, y: this.position.y + 45 }, this.SCALE);
       // const randomFlavour = Math.floor(Math.random() * flavours.length);
@@ -43,7 +44,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
 
-      // #Ebene-11
+      // #Layer-11
 
       // #path1-0
       crc2.beginPath();

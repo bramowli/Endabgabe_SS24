@@ -1,5 +1,5 @@
 namespace Geistdiele {
-  export class UI extends Drawable implements Interactable {
+  export class UI extends Drawable {
     private cashCount: number = 0;
 
     constructor(_position: Vector) {
@@ -17,14 +17,13 @@ namespace Geistdiele {
 
     public interact(_hitPosition: Vector): boolean {
       if (_hitPosition.x >= 760 && _hitPosition.x <= 795 && _hitPosition.y >= 995 && _hitPosition.y <= 1030) {
-        console.log("hit");
         return true;
       }
       return false;
     }
 
     public increaseCounter() {
-      //if ghost leave
+      // if ghost has been served
       this.cashCount++;
     }
 
@@ -59,7 +58,7 @@ namespace Geistdiele {
     private drawCashCounter(): void {
       crc2.save();
 
-      // #Ebene-21
+      // #Layer-21
       crc2.save();
 
       // #path1-3
@@ -171,7 +170,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(1750, 10);
 
-      // #Ebene-13
+      // #Layer-13
 
       // #path1-6
       crc2.beginPath();
@@ -203,7 +202,7 @@ namespace Geistdiele {
     private drawBottles() {
       crc2.save();
 
-      // #Ebene-22
+      // #Layer-22
 
       // #path1
       crc2.beginPath();

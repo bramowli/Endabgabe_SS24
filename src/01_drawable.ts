@@ -1,4 +1,5 @@
 namespace Geistdiele {
+  // abstract class for all drawable objects
   export abstract class Drawable {
     position: Vector;
 

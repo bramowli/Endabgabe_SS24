@@ -1,4 +1,13 @@
 namespace Geistdiele {
+  // defines the structure of an ingredient
+  export interface IngredientType {
+    name: string;
+    colour: string;
+    lineColour: string;
+    price: number;
+  }
+
+  // must be 3 different flavours
   export const flavours: IngredientType[] = [
     {
       name: "Souls of the Innocent",
@@ -19,6 +28,8 @@ namespace Geistdiele {
       price: 20,
     },
   ];
+
+  // must be 2 different toppings
   export const toppings: IngredientType[] = [
     {
       name: "Cicadalegs",
@@ -33,6 +44,8 @@ namespace Geistdiele {
       price: 10,
     },
   ];
+
+  // must be 2 different sauces
   export const sauces: IngredientType[] = [
     {
       name: "blood",

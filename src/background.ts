@@ -47,7 +47,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(_x, _y);
 
-      // #Ebene-7
+      // #Layer-7
 
       // #path4-2
       crc2.beginPath();
@@ -1315,7 +1315,7 @@ namespace Geistdiele {
       crc2.fill();
       crc2.restore();
 
-      // #Ebene-3
+      // #Layer-3
       crc2.save();
 
       // #path70
@@ -3863,7 +3863,7 @@ namespace Geistdiele {
       crc2.stroke();
       crc2.restore();
 
-      // #Ebene-2
+      // #Layer-2
       crc2.save();
 
       // #path212
@@ -3940,7 +3940,7 @@ namespace Geistdiele {
       crc2.bezierCurveTo(148.919, 119.204, 160.064, 118.897, 160.064, 118.897);
       crc2.stroke();
 
-      // #Ebene-5-kopieren
+      // #Layer-5-kopieren
 
       // #path5
       crc2.beginPath();
@@ -3984,7 +3984,7 @@ namespace Geistdiele {
       crc2.lineTo(297.676, 47.8088);
       crc2.stroke();
 
-      // #Ebene-5
+      // #Layer-5
 
       // #path8
       crc2.beginPath();
@@ -4004,7 +4004,7 @@ namespace Geistdiele {
       crc2.fill();
       crc2.stroke();
 
-      // #Ebene-7
+      // #Layer-7
 
       // #path9
       crc2.beginPath();
@@ -4114,7 +4114,7 @@ namespace Geistdiele {
       crc2.fill();
       crc2.stroke();
 
-      // #Ebene-8
+      // #Layer-8
 
       // #path15
       crc2.beginPath();

@@ -1,4 +1,5 @@
 namespace Geistdiele {
+  // represents 2D coordinates
   export class Vector {
     x: number;
     y: number;

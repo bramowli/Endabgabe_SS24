@@ -107,7 +107,8 @@ namespace Geistdiele {
     }
 
     public equals(_iceCream: IceCream): boolean {
-      if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {//? weil es sind ja nicht immer alle da
+      if (_iceCream.getSauce()?.getName() !== this.getSauce()?.getName()) {
+        //? weil es sind ja nicht immer alle da
         return false;
       }
       if (_iceCream.getSprinkles()?.getName() !== this.getSprinkles()?.getName()) {
@@ -126,7 +127,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
       crc2.scale(this.size, this.size);
-      // #Ebene-8
+      // #Layer-8
 
       // #path1
       crc2.beginPath();

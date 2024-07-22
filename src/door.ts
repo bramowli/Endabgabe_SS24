@@ -31,7 +31,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x - 90, this.position.y);
 
-      // #Ebene-10-0
+      // #Layer-10-0
       crc2.save();
 
       // #path1-8
@@ -199,7 +199,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.translate(this.position.x, this.position.y);
 
-      // #Ebene-10
+      // #Layer-10
       crc2.save();
 
       // #path1

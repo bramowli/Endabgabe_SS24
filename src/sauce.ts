@@ -1,6 +1,6 @@
 namespace Geistdiele {
   export class Sauce extends Ingredient {
-    constructor(_data: IngredientType, _position: Vector, _size:number) {
+    constructor(_data: IngredientType, _position: Vector, _size: number) {
       super(_data, _position, _size);
     }
 

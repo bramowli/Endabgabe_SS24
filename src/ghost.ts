@@ -1,5 +1,7 @@
 namespace Geistdiele {
+  // possible emeotions of the ghost
   type Emotions = "happy" | "neutral" | "unhappy";
+
   export class Ghost extends Drawable {
     private emotion: Emotions;
     private timer: number;
@@ -11,11 +13,11 @@ namespace Geistdiele {
       this.emotion = _emotion;
       this.timer = 0;
       this.activateSpeechbubble = _activateSpeechbubble;
+      // internal timer to change the emotion and add a speechbubble
       setInterval(this.updateTimer.bind(this), 1000);
     }
 
     public draw(): void {
-      //console.log(`Drawing ghost at position: (${this.position.x}, ${this.position.y})`);
       this.drawGhost();
       this.drawMouth();
       if (this.speechbubble) {
@@ -23,42 +25,41 @@ namespace Geistdiele {
       }
     }
 
+    // move ghost relative to own position by x and y
     public move(_x: number, _y: number): void {
-      //zum Aufrücken
       this.position.x += _x;
       this.position.y += _y;
     }
 
     public interact(_hitPosition: Vector): boolean {
-      //console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-      //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
       if (
         _hitPosition.x >= this.position.x &&
         _hitPosition.x <= this.position.x + 100 &&
         _hitPosition.y >= this.position.y &&
         _hitPosition.y <= this.position.y + 200
       ) {
-        console.log("hit");
         return true;
       }
       return false;
     }
 
     private updateTimer(): void {
-      //kann ich den auch aus der main benutzen?
       this.timer++;
       if (this.timer === 3) {
+        // add Speechbubble after 3 seconds
         this.addSpeechbubble();
       }
       if (this.timer === 40) {
-        console.log("40 seconds have passed!");
+        // ghost becomes neutral after 40 seconds
         this.emotion = "neutral";
       }
-      if (this.timer === 80) {
+      if (this.timer === 70) {
+        // ghost becomes unhappy after 70 seconds
         this.emotion = "unhappy";
       }
     }
 
+    // add a speechbubble with a random icecream
     public addSpeechbubble() {
       if (this.activateSpeechbubble === true) {
         const pos = new Vector(this.position.x + 95, this.position.y - 80);
@@ -72,7 +73,6 @@ namespace Geistdiele {
     }
 
     private drawMouth() {
-      //console.log("uff")
       crc2.save();
       crc2.translate(this.position.x + 32, this.position.y + 90);
       crc2.strokeStyle = "black";
@@ -87,7 +87,6 @@ namespace Geistdiele {
         crc2.beginPath();
         crc2.moveTo(0, 0);
         crc2.bezierCurveTo(0, -10, 35, -10, 35, 0);
-        // crc2.moveTo(0,0)
       }
 
       crc2.closePath();
@@ -96,9 +95,7 @@ namespace Geistdiele {
     }
 
     private drawGhost() {
-      //?
       crc2.save();
-      /*this.position.x, this.position.y * Math.random()*0.05*/
       crc2.translate(this.position.x, this.position.y);
       // #path1
       crc2.beginPath();
@@ -124,7 +121,7 @@ namespace Geistdiele {
       crc2.fill();
       crc2.stroke();
 
-      // #Ebene-3
+      // #Layer-3
 
       // #path2
       crc2.beginPath();

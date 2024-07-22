@@ -1,9 +1,11 @@
 namespace Geistdiele {
+  // possible positions for the sauce
   type SaucePositionType = "left" | "right";
+
   export class SauceInBottle extends Ingredient {
     private saucePosition: SaucePositionType;
 
-    constructor(_data: IngredientType, _saucePosition: SaucePositionType, _position: Vector, _size:number) {
+    constructor(_data: IngredientType, _saucePosition: SaucePositionType, _position: Vector, _size: number) {
       super(_data, _position, _size);
       this.saucePosition = _saucePosition;
     }
@@ -24,7 +26,7 @@ namespace Geistdiele {
         _hitPosition.y >= 890 &&
         _hitPosition.y <= 1050
       ) {
-        console.log("hit red");
+        // hit red
         return true;
       } else if (
         this.saucePosition === "right" &&
@@ -33,7 +35,7 @@ namespace Geistdiele {
         _hitPosition.y >= 840 &&
         _hitPosition.y <= 1000
       ) {
-        console.log("hit green");
+        // hit green
         return true;
       }
       return false;

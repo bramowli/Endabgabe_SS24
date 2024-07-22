@@ -1,5 +1,7 @@
 namespace Geistdiele {
+  // possible positions of the topping
   type ToppingPositionType = "left" | "right";
+
   export class Topping extends Ingredient {
     private toppingPosition: ToppingPositionType;
 
@@ -17,8 +19,6 @@ namespace Geistdiele {
     }
 
     public interact(_hitPosition: Vector): boolean {
-      console.log(`hit: x: ${_hitPosition.x} y: ${_hitPosition.y}`);
-      //console.log(`pos: x: ${this.position.x} y: ${this.position.y}`);
       if (
         this.toppingPosition === "left" &&
         _hitPosition.x >= 1275 &&
@@ -26,7 +26,7 @@ namespace Geistdiele {
         _hitPosition.y >= 800 &&
         _hitPosition.y <= 1035
       ) {
-        console.log("hit cicada");
+        // hit cicada
         return true;
       } else if (
         this.toppingPosition === "right" &&
@@ -35,7 +35,7 @@ namespace Geistdiele {
         _hitPosition.y >= 870 &&
         _hitPosition.y <= 1035
       ) {
-        console.log("hit spider");
+        // hit spider
         return true;
       }
       return false;
@@ -45,7 +45,7 @@ namespace Geistdiele {
       crc2.save();
       crc2.transform(1.0, 0.0, 0.0, 1.0, -0.942039, -4.53197);
 
-      // #Ebene-19
+      // #Layer-19
 
       // #path1-2
       crc2.beginPath();
@@ -367,8 +367,8 @@ namespace Geistdiele {
       crc2.stroke();
     }
 
-    private drawRightTopping() {
-      // #Ebene-1
+    drawRightTopping() {
+      // #Layer-1
 
       // #path25
       crc2.beginPath();
